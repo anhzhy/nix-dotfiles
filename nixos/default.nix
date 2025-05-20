@@ -43,7 +43,7 @@
     xdg-utils
     acpi
     brightnessctl
-    cpupower-gui
+    # cpupower-gui
     powertop
     bat
     btop
@@ -64,9 +64,5 @@
     glib 
     nwg-look
     libevdev
-    qt6.qtwayland
-    qt6.qtshadertools
-    vulkan-headers
-    wayland-protocols
   ];
 }
