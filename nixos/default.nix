@@ -64,9 +64,6 @@
     glib 
     nwg-look
     libevdev
-    libsForQt5.qt5.qtbase
-    libsForQt5.qt5.qttools
-    libsForQt5.qt5.qtdeclarative
     qt6.qtwayland
     qt6.qtshadertools
     vulkan-headers

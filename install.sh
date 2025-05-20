@@ -7,10 +7,8 @@ ERROR="$(tput setaf 1)[ERROR]$(tput sgr0)"
 ACTION="$(tput setaf 6)[ACTION]$(tput sgr0)"
 RESET="$(tput sgr0)"
 
-# Overwrite username variable in flake.nix
 sed -i 's/username\s*=\s*"\([^"]*\)"/username = "'"$USERNAME"'"/' ./flake.nix 
 
-# Detect device type
 if [ -r /sys/class/dmi/id/chassis_type ]; then
   case $(cat /sys/class/dmi/id/chassis_type) in
     8|9|10|11)  DEVICE="laptop" ;;
@@ -19,7 +17,6 @@ if [ -r /sys/class/dmi/id/chassis_type ]; then
   esac
 fi
 
-# Copy config based on your device
 read -rp "$ACTION Enter Your New Hostname: " HOSTNAME
 if [ -z "$HOSTNAME" ]; then
   echo -e "${ERROR} You Need To Enter Your Hostname${RESET}" >&2
@@ -32,15 +29,20 @@ else
   git add .
 fi
 
-# Copy wallpapers to $HOME
-WALLPAPER_SOURCE="$SOURCE/wallpapers"
-WALLPAPER_HOME="$HOME/Pictures/wallpapers"
+DOCUMENTS="Documents"
+DOWNLOADS="Downloads"
+MUSIC="Music"
+PICTURES="Pictures"
+VIDEOS="Videos"
+WORKSPACE="Workspace"
 
-mkdir -p "$WALLPAPER_HOME"
+mkdir -p ~/${DOCUMENTS}
+mkdir -p ~/${DOWNLOADS}
+mkdir -p ~/${MUSIC}
+mkdir -p ~/${PICTURES}
+mkdir -p ~/${VIDEOS}
+mkdir -p ~/${WORKSPACE}
 
-if [ -d "$WALLPAPER_HOME" ]; then
-  find "$WALLPAPER_SOURCE" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o \) -exec cp -n {} "$WALLPAPER_HOME" \;
-fi
+cp -r wallpapers/* ~/${PICTURES}/wallpapers
 
-# Build NixOS flake
 sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"
