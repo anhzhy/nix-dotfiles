@@ -31,9 +31,9 @@
   #       "hyprland"
   #     ];
   #   };
-    # wlr.enable = true;
-    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
+  #   wlr.enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # };
   
   programs.dconf.enable = true;
   programs.nix-ld.enable = true;
