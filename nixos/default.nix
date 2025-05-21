@@ -24,23 +24,12 @@
 
   # environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
-    bc
-    baobab
-    btrfs-progs
     clang
     curl
     cpufrequtils
-    duf
     findutils
     ffmpeg   
-    killall  
-    libappindicator
-    libnotify
-    openssl
-    pciutils
     vim
-    xdg-user-dirs
-    xdg-utils
     acpi
     brightnessctl
     powertop
@@ -48,19 +37,13 @@
     btop
     eza
     fzf
-    gnumake
-    lm_sensors
     fastfetch
-    ripgrep
     tldr
     zip
     unzip
     openssl
-    pkg-config
     wget
-    xfce.thunar
     glib 
-    nwg-look
     libevdev
   ];
 }
