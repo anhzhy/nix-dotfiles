@@ -7,6 +7,41 @@
     "electron-25.9.0"
   ];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      qt6 = prev.qt6.overrideScope' (finalq: prevq: {
+        qtbase = prevq.qtbase.overrideAttrs (old: {
+          version = "6.8.3";
+            src = prev.fetchFromGitHub {
+              owner = "qt";
+              repo = "qtbase";
+              rev = "v6.8.3";
+              hash = "sha256-pjI8LhgT1aEiGHcR7t3N/D/qlEjgOzYHJ58tCPrOfW0=";
+            };
+            patches = old.patches;
+          });
+        qttools = prevq.qttools.overrideAttrs (old: {
+          version = "6.8.3";
+          src = prev.fetchFromGitHub {
+            owner = "qt";
+            repo = "qttools";
+            rev = "v6.8.3";
+            hash = "sha256-4ZxKkHQ/HAdmZolR0muLTh6SQ7mKW4+Lr/ntv8mPQo4=";
+          };
+        });
+        qtdeclarative = prevq.qtdeclarative.overrideAttrs (old: {
+          version = "6.8.3";
+          src = prev.fetchFromGitHub {
+            owner = "qt";
+            repo = "qtdeclarative";
+            rev = "v6.8.3";
+            hash = "sha256-wCvqcKQ22IznV2nhw0X2EQ+T5rhSOgc8Rt5W0dre27I=";
+          };
+        });
+      });
+    })
+  ];
+
   imports = [
     ./core
     ./options/intel-drivers.nix
