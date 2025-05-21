@@ -1,10 +1,10 @@
-{ pkgs, hyprland, username, ... }:
+{ pkgs, username, ... }:
 let 
   config_dir = ./configs;
 in
 {
   imports = [
-    hyprland.homeManagerModules.default
+    # hyprland.homeManagerModules.default
     # ./git.nix
     # ./gtk.nix
     # ./shell.nix
