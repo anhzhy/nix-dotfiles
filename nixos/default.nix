@@ -9,7 +9,7 @@
 
   nixpkgs.overlays = [
     (final: prev: {
-      qt6 = prev.qt6.overrideScope' (finalq: prevq: {
+      qt6 = prev.qt6.overrideScope (finalq: prevq: {
         qtbase = prevq.qtbase.overrideAttrs (old: {
           version = "6.8.3";
             src = prev.fetchFromGitHub {
