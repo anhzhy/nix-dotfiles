@@ -9,5 +9,5 @@
   # To prevent getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   
-  system.stateVersion = "25.05";
+  system.stateVersion = "24.11";
 }
