@@ -26,19 +26,19 @@
     enableSSHSupport = true;
   };
 
-  # xdg.portal = {
-  #   enable = true;
-  #   xdgOpenUsePortal = true;
-  #   config = {
-  #     common.default = [ "gtk" ];
-  #     hyprland.default = [
-  #       "gtk"
-  #       "hyprland"
-  #     ];
-  #   };
-  #   wlr.enable = true;
-  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  # };
+  xdg.portal = {
+    enable = true;
+    # xdgOpenUsePortal = true;
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [
+        "gtk"
+        "hyprland"
+      ];
+    };
+    # wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
   
   programs.dconf.enable = true;
   # programs.nix-ld.enable = true;
