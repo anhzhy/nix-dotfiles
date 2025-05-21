@@ -9,10 +9,7 @@
 
     displayManager = {
       sddm.enable = true;
-    };
-
-    libinput = {
-      enable = true;
+      defaultSession = "hyprland";
     };
   };
 }
