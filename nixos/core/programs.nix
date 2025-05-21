@@ -1,10 +1,15 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.hyprland.nixosModules.default
+  ];
+
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-    # portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    xwayland.enable = true;
   };
 
   programs.steam = {
@@ -36,6 +41,6 @@
   # };
   
   programs.dconf.enable = true;
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [ ];
+  # programs.nix-ld.enable = true;
+  # programs.nix-ld.libraries = with pkgs; [ ];
 }

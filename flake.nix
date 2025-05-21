@@ -4,7 +4,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    
+   
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,41 +30,41 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
-    nur.url = "github:nix-community/NUR"; 
+    # nur.url = "github:nix-community/NUR"; 
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, hyprland, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
   let
-    lib = nixpkgs.lib;
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
     username = "anhzhy";
     hostname = "nixos";
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
-      "${hostname}" = lib.nixosSystem rec {
+      "${hostname}" = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit hyprland;
-          inherit lanzaboote;
           inherit self inputs hostname username;
         };
         modules = [ 
           ./hosts/${hostname}/default.nix
-          lanzaboote.nixosModules.lanzaboote
-          hyprland.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./home/default.nix;
-            home-manager.extraSpecialArgs = specialArgs;
-          }
+          # home-manager.nixosModules.home-manager
+          # {
+          #   home-manager.useGlobalPkgs = true;
+          #   home-manager.useUserPackages = true;
+          #   home-manager.users.${username} = import ./home/default.nix;
+          #   home-manager.extraSpecialArgs = specialArgs;
+          # }
         ];
       };
     };
+
+    # homeConfiguration = {
+    #
+    # }
   };
 }

@@ -1,14 +1,18 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 
 {
-  boot.loader.systemd-boot.enable = lib.mkForce false;
+  imports = [
+    inputs.lanzaboote.nixosModules.lanzaboote
+  ];
 
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
+  boot = {
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+    };
+
+    loader.systemd-boot.enable = lib.mkForce false;
   };
 
-  environment.systemPackages = with pkgs; [
-    sbctl
-  ];
+  environment.systemPackages = with pkgs; [sbctl];
 }
