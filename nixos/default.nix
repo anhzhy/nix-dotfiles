@@ -30,9 +30,6 @@
     findutils
     ffmpeg   
     vim
-    acpi
-    brightnessctl
-    powertop
     bat
     btop
     eza

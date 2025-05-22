@@ -24,16 +24,6 @@
       gnome-settings-daemon
     ];
 
-    power-profiles-daemon.enable = true;
-    
-    upower = {
-      enable = true;
-      percentageLow = 20;
-      percentageCritical = 5;
-      percentageAction = 3;
-      criticalPowerAction = "PowerOff";
-    };
-
     # tlp.settings = {
     #   CPU_ENERGY_PERF_POLICY_ON_AC = "power";
     #   CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
@@ -63,8 +53,4 @@
     '';
   };
 
-  powerManagement = {
-  	enable = true;
-    cpuFreqGovernor = "schedutil";
-  };
 }
