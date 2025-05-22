@@ -45,4 +45,4 @@ mkdir -p ~/${WORKSPACE}
 
 cp -r wallpapers/* ~/${PICTURES}/wallpapers
 
-sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"
+sudo nixos-rebuild boot --flake $SOURCE/#"${HOSTNAME}"
