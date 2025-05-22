@@ -8,8 +8,10 @@
     };
 
     displayManager = {
-      sddm.enable = true;
-      wayland.enable = true;
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
       defaultSession = "hyprland";
     };
   };
