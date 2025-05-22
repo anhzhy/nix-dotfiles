@@ -51,11 +51,21 @@
     brightnessctl
     cpupower-gui
     powertop
-    cpupower
   ];
 
   services.logind.extraConfig = ''
     # don’t shutdown when power button is short-pressed
     HandlePowerKey=ignore
   '';
+
+  boot = {
+    kernelModules = [ "acpi_call" ];
+    extraModulePackages =
+      with config.boot.kernelPackages;
+      [
+        acpi_call
+        cpupower
+      ]
+      ++ [ pkgs.cpupower-gui ];
+  };
 }
