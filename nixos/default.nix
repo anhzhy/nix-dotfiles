@@ -45,5 +45,6 @@
     wget
     glib 
     libevdev
+    git
   ];
 }
