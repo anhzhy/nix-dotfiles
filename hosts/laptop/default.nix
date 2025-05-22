@@ -28,7 +28,7 @@
   #   PCIE_ASPM_ON_BAT = "powersupersave";
   # };
 
-  logind.extraConfig = ''
+  services.logind.extraConfig = ''
     # don’t shutdown when power button is short-pressed
     HandlePowerKey=ignore
   '';
