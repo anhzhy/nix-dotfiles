@@ -51,7 +51,6 @@
     brightnessctl
     cpupower-gui
     powertop
-    acpi-call
     cpupower
   ];
 

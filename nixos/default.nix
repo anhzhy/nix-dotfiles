@@ -26,7 +26,6 @@
   environment.systemPackages = with pkgs; [
     clang
     curl
-    cpufrequtils
     findutils
     ffmpeg   
     vim
