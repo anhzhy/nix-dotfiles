@@ -3,7 +3,7 @@
   imports = [
     ./boot.nix
     ./console.nix
-    # ./flatpak.nix
+    ./flatpak.nix
     ./fonts.nix
     ./hardware.nix
     ./locale.nix

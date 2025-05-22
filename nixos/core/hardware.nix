@@ -1,5 +1,4 @@
 { config, ... }: 
-
 {
   hardware = {
     bluetooth = {
@@ -12,12 +11,6 @@
         };
       };
     };
-
-    # opengl = {
-    #   enable = true;
-    #   driSupport = true;
-    #   driSupport32Bit = true;
-    # };
 
     logitech = {
       wireless = {

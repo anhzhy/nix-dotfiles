@@ -45,4 +45,4 @@ mkdir -p ~/${WORKSPACE}
 
 cp -r wallpapers/* ~/${PICTURES}/wallpapers
 
-sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}" --option cores 3 --option max-jobs 6
+sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"

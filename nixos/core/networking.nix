@@ -1,5 +1,4 @@
 { pkgs, hostname, ... }:
-
 {
   networking = {
     hostName = "${hostname}";

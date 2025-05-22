@@ -1,15 +1,10 @@
 { config, pkgs, inputs, ... }:
-
 {
-  imports = [
-    inputs.hyprland.nixosModules.default
-  ];
-
   programs.hyprland = {
     enable = true;
-    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    # xwayland.enable = true;
+    package = pkgs.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    xwayland.enable = true;
   };
 
   programs.steam = {
@@ -26,21 +21,18 @@
     enableSSHSupport = true;
   };
 
-  # xdg.portal = {
-  #   enable = true;
-  #   # xdgOpenUsePortal = true;
-  #   config = {
-  #     common.default = [ "gtk" ];
-  #     hyprland.default = [
-  #       "gtk"
-  #       "hyprland"
-  #     ];
-  #   };
-  #   # wlr.enable = true;
-  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  # };
+  xdg.portal = {
+    enable = true;
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [
+        "gtk"
+        "hyprland"
+      ];
+    };
+  };
   
   programs.dconf.enable = true;
   programs.nix-ld.enable = true;
-  # programs.nix-ld.libraries = with pkgs; [ ];
+  programs.nix-ld.libraries = with pkgs; [ ];
 }
