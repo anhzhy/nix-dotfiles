@@ -6,7 +6,7 @@
         enable = true;
         wayland.enable = true;
       };
-      defaultSession = "sway";
+      defaultSession = "hyprland";
     };
   };
 }
