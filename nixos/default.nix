@@ -42,9 +42,6 @@
     # --- Version Control ---
     git
 
-    # --- Authentication ---
-    polkit-gnome
-
     # --- Utilities ---
     htop
     curl
