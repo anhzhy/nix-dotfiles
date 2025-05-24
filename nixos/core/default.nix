@@ -3,9 +3,11 @@
   imports = [
     ./boot.nix
     ./console.nix
+    ./display-manager.nix
     ./flatpak.nix
     ./fonts.nix
     ./hardware.nix
+    ./keyboard-layout.nix
     ./locale.nix
     ./networking.nix
     ./nh.nix
@@ -18,7 +20,5 @@
     ./timezone.nix
     ./user.nix
     ./virtualisation.nix
-    ./keyboard-layout.nix
-    ./display-manager.nix
   ];
 }
