@@ -20,12 +20,14 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
     ];
-  };
 
-  fontconfig.defaultFonts = {
-    serif = ["Libertinus Serif"];
-    sansSerif = ["Inter"];
-    monospace = ["JetBrains Mono Nerd Font"];
-    emoji = ["Noto Color Emoji"];
+    enableDefaultPackages = false;
+
+    fontconfig.defaultFonts = {
+      serif = ["Libertinus Serif"];
+      sansSerif = ["Inter"];
+      monospace = ["JetBrains Mono Nerd Font"];
+      emoji = ["Noto Color Emoji"];
+    };
   };
 }
