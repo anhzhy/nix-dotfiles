@@ -3,55 +3,46 @@
   services = {
     # Mount, trash, and other functionalities
     gvfs.enable = true;
+    
     # Thumbnail support for images
     tumbler.enable = true;
+
+    # Managing passwords, keys, and secrets securely
     gnome.gnome-keyring.enable = true;
-    dbus.enable = true;
+
+    # Allow remote SSH access to the machine
     openssh.enable = true;
-    picom.enable = true;
+
+    # Handling device events and hotplugging
     udev.enable = true;
+
+    # Filesystem for environment variables
     envfs.enable = true;
+
+    # Discard unused blocks on SSDs, improving performance and longevity
     fstrim = {
       enable = true;
       interval = "weekly";
     };
+
+    # Input device management
     libinput.enable = true;
+
+    # RPC program numbers to network addresses
     rpcbind.enable = false;
+
+    # Sharing files over the network
     nfs.server.enable = false;
+
+    # Firmware updates on supported hardware devices
     fwupd.enable = true;
 
-    dbus.packages = with pkgs; [
-      gcr
-      gnome-settings-daemon
-    ];
-
-    # tlp.settings = {
-    #   CPU_ENERGY_PERF_POLICY_ON_AC = "power";
-    #   CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-    #
-    #   CPU_BOOST_ON_AC = 1;
-    #   CPU_BOOST_ON_BAT = 1;
-    #
-    #   CPU_HWP_DYN_BOOST_ON_AC = 1;
-    #   CPU_HWP_DYN_BOOST_ON_BAT = 1;
-    #
-    #   PLATFORM_PROFILE_ON_AC = "performance";
-    #   PLATFORM_PROFILE_ON_BAT = "performance";
-    #
-    #   INTEL_GPU_MIN_FREQ_ON_AC = 500;
-    #   INTEL_GPU_MIN_FREQ_ON_BAT = 500;
-    #   INTEL_GPU_MAX_FREQ_ON_AC=0;
-    #   INTEL_GPU_MAX_FREQ_ON_BAT=0;
-    #   INTEL_GPU_BOOST_FREQ_ON_AC=0;
-    #   INTEL_GPU_BOOST_FREQ_ON_BAT=0;
-    #   PCIE_ASPM_ON_AC = "default";
-    #   PCIE_ASPM_ON_BAT = "powersupersave";
-    # };
-
-    logind.extraConfig = ''
-      # don’t shutdown when power button is short-pressed
-      HandlePowerKey=ignore
-    '';
+    dbus = {
+      enable = true;
+      packages = with pkgs; [
+        gcr
+        gnome-settings-daemon
+      ];
+    }
   };
-
 }
