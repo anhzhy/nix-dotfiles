@@ -43,6 +43,6 @@
         gcr
         gnome-settings-daemon
       ];
-    }
+    };
   };
 }
