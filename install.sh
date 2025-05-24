@@ -42,7 +42,6 @@ mkdir -p ~/${MUSIC}
 mkdir -p ~/${PICTURES}
 mkdir -p ~/${VIDEOS}
 mkdir -p ~/${WORKSPACE}
-
-cp -r wallpapers/* ~/${PICTURES}/wallpapers
+mkdir -p ~/"${PICTURES}/wallpapers" && cp -r wallpapers/* ~/${PICTURES}/wallpapers
 
 sudo nixos-rebuild boot --flake $SOURCE/#"${HOSTNAME}"

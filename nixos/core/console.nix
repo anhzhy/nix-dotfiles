@@ -1,8 +1,9 @@
 { config, pkgs, lib, ... }:
 {
   console = {
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-120n.psf.gz";
-    packages = [ pkgs.terminus_font ];
+    font = "ter-124b";
     earlySetup = false;
+    keyMap = "us";
+    packages = with pkgs; [ terminus_font ];
   };
 }
