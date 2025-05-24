@@ -14,7 +14,7 @@
 
   users.users.root = {
     shell = pkgs.zsh;  
-  }
+  };
 
   nix.settings.allowed-users = [ "${username}" ];
 }
