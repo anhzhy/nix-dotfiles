@@ -8,6 +8,8 @@
       "wheel"
       "bluetooth"
       "docker"
+      "input" 
+      "audio"
     ];
     shell = pkgs.zsh;
   };

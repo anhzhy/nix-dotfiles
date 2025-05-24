@@ -1,5 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 {
+  imports = [
+    inputs.nix-gaming.nixosModules.pipewireLowLatency
+  ];
+
   services.pulseaudio.enable = lib.mkForce false;
   services.pipewire = {
     enable = true;
@@ -8,7 +12,7 @@
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
-    # lowLatency.enable = true;
+    lowLatency.enable = true;
   };
 
   hardware.alsa.enablePersistence = true;

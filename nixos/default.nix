@@ -3,9 +3,9 @@
 {
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (_: true);
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "electron-25.9.0"
+  # ];
 
   imports = [
     ./core
@@ -22,25 +22,41 @@
     nvidiaBusID = "";
   };
 
-  # environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.systemPackages = with pkgs; [
-    clang
-    curl
-    findutils
-    ffmpeg   
+    # --- Terminal Emulators ---
+    kitty
+
+    # --- Status Bar and Launcher ---
+    waybar
+    wofi
+
+    # --- Web Browsers ---
+    firefox
+
+    # --- Text Editors ---
+    neovim
     vim
-    bat
-    btop
-    eza
-    fzf
-    fastfetch
-    tldr
-    zip
-    unzip
-    openssl
-    wget
-    glib 
-    libevdev
+    nano
+
+    # --- Version Control ---
     git
+
+    # --- Authentication ---
+    polkit-gnome
+
+    # --- Utilities ---
+    htop
+    curl
+    wget
+    openssl
+    glib
+    libevdev
+    # asciiquarium
+    # eza
+    # fzf
+    # tldr
+    # findutils
+    # clang
   ];
 }

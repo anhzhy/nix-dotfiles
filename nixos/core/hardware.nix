@@ -1,5 +1,6 @@
 { config, ... }: 
 {
+  services.blueman.enable = true;
   hardware = {
     bluetooth = {
       enable = true;
@@ -26,7 +27,7 @@
     };
   };
 
-  services.blueman.enable = true;
+  hardware.brillo.enable = true;
   hardware.enableRedistributableFirmware = true;
 }
 
