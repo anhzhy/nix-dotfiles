@@ -18,7 +18,7 @@
     ./sound.nix
     ./system.nix
     ./timezone.nix
-    ./user.nix
+    ./users.nix
     ./virtualisation.nix
   ];
 }
