@@ -19,7 +19,8 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
-      "i915.modeset=1"
+      "systemd.mask=systemd-vconsole-setup.service"
+      "systemd.mask=dev-tpmrm0.device"
     ];
     loader.systemd-boot.enable = lib.mkForce false;
     initrd.systemd.enable = true;
