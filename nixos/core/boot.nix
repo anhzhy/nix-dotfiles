@@ -22,7 +22,7 @@
       "i915.modeset=1"
     ];
     loader.systemd-boot.enable = lib.mkForce false;
-    initrd.systemd.enable = false;
+    initrd.systemd.enable = true;
   };
 
   environment.systemPackages = with pkgs; [sbctl];
