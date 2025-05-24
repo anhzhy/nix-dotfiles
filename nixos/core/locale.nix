@@ -14,7 +14,8 @@
       LC_TIME = "en_US.UTF-8";
     };
     extraLocales = [
-      "vi_VN.UTF-8/UTF-8"
+      "ja_JP.UTF-8/UTF-8"
+      "vi_VN/UTF-8"
     ];
   };
 }
