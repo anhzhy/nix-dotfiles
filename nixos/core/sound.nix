@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
-  services.pulseaudio.enable = false;
+  services.pulseaudio.enable = lib.mkForce false;;
   services.pipewire = {
     enable = true;
     alsa.enable = true;

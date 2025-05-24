@@ -1,12 +1,14 @@
 { pkgs, ... }:
 {
   services = {
+    # Mount, trash, and other functionalities
     gvfs.enable = true;
+    # Thumbnail support for images
+    tumbler.enable = true;
     gnome.gnome-keyring.enable = true;
     dbus.enable = true;
     openssh.enable = true;
     picom.enable = true;
-    tumbler.enable = true;
     udev.enable = true;
     envfs.enable = true;
     fstrim = {
@@ -16,7 +18,6 @@
     libinput.enable = true;
     rpcbind.enable = false;
     nfs.server.enable = false;
-  	blueman.enable = true;
     fwupd.enable = true;
 
     dbus.packages = with pkgs; [

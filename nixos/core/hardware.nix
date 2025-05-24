@@ -7,7 +7,13 @@
       settings = {
         General = {
           Enable = "Source,Sink,Media,Socket";
-          Experimental = true;
+          DiscoverableTimeout = 0;
+          Discoverable = true;
+          AlwaysPairable = true;
+          # Experimental = true;
+        };
+        Policy = {
+          AutoEnable = true;
         };
       };
     };
@@ -20,6 +26,7 @@
     };
   };
 
+  services.blueman.enable = true;
   hardware.enableRedistributableFirmware = true;
 }
 

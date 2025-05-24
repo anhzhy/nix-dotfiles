@@ -2,6 +2,7 @@
 {
   imports = [
     ./boot.nix
+    ./console.nix
     ./flatpak.nix
     ./fonts.nix
     ./hardware.nix
@@ -17,6 +18,7 @@
     ./timezone.nix
     ./user.nix
     ./virtualisation.nix
-    ./xserver.nix
+    ./keyboard-layout.nix
+    ./display-manager.nix
   ];
 }

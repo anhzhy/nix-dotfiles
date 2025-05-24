@@ -13,8 +13,8 @@
       LC_TELEPHONE = "en_US.UTF-8";
       LC_TIME = "en_US.UTF-8";
     };
-    # extraLocales = [
-    #   "vi_VN"
-    # ];
+    extraLocales = [
+      "vi_VN.UTF-8"
+    ];
   };
 }

@@ -30,7 +30,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: 
   let
     username = "anhzhy";
     hostname = "nixos";
@@ -42,23 +42,20 @@
       "${hostname}" = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
+          inherit hyprland;
           inherit self inputs hostname username;
         };
         modules = [ 
           ./hosts/${hostname}/default.nix
-          # home-manager.nixosModules.home-manager
-          # {
-          #   home-manager.useGlobalPkgs = true;
-          #   home-manager.useUserPackages = true;
-          #   home-manager.users.${username} = import ./home/default.nix;
-          #   home-manager.extraSpecialArgs = specialArgs;
-          # }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = import ./home/default.nix;
+            home-manager.extraSpecialArgs = specialArgs;
+          }
         ];
       };
     };
-
-    # homeConfiguration = {
-    #
-    # }
   };
 }

@@ -2,17 +2,32 @@
 {
   fonts = {
     packages = with pkgs; [
+      # icon fonts
+      material-symbols
+
+      # Sans(Serif) fonts
+      libertinus
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      # nerd-fonts
-      twemoji-color-font
-      fira-code
-      fira-code-symbols
+      roboto
+      (google-fonts.override {fonts = ["Inter"];})
+
+      # monospace fonts
+      jetbrains-mono
+
+      # nerdfonts
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    twemoji-color-font
-  ];
+  enableDefaultPackages = false;
+
+  fontconfig.defaultFonts = {
+    serif = ["Libertinus Serif"];
+    sansSerif = ["Inter"];
+    monospace = ["JetBrains Mono Nerd Font"];
+    emoji = ["Noto Color Emoji"];
+  };
 }

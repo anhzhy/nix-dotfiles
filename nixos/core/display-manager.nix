@@ -1,18 +1,12 @@
 { username, ... }:
 {
   services = {
-    xserver = {
-      enable = true;
-      xkb.layout = "us";
-      xkb.options = "grp:alt_shift_toggle";
-    };
-
     displayManager = {
       sddm = {
         enable = true;
         wayland.enable = true;
       };
-      defaultSession = "hyprland";
+      defaultSession = "sway";
     };
   };
 }
