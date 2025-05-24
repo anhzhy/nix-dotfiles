@@ -22,8 +22,6 @@
     ];
   };
 
-  enableDefaultPackages = false;
-
   fontconfig.defaultFonts = {
     serif = ["Libertinus Serif"];
     sansSerif = ["Inter"];
