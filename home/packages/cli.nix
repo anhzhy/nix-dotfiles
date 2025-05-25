@@ -57,7 +57,6 @@
     # wineWowPackages.wayland
 
     asciiquarium
-    pipes
     cbonsai                           # terminal screensaver
     cmatrix
     pipes                             # terminal screensaver
