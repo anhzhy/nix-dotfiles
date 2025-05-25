@@ -1,11 +1,12 @@
 { pkgs, username, ... }:
 let 
-  config_dir = ./configs;
+  config_dir = ./.config;
 in
 {
   imports = [
     ./p10k/p10k.nix
     ./git.nix
+    ./btop.nix
   
     ./zsh
     ./fastfetch
@@ -36,7 +37,7 @@ in
     mpv
 
     # System monitoring and info
-    btop
+    # btop
 
     # Editor
     neovim
