@@ -50,7 +50,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username} = import ./home/default.nix;
-            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.extraSpecialArgs = { inherit self inputs hostname username; };
           }
         ];
       };

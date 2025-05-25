@@ -37,10 +37,10 @@ in
   home.packages = (with pkgs; [
     #User Apps
     vscode
+    wallust
 
     #utils
     ranger
-    curl
     xflux
 
     #misc 
@@ -53,5 +53,5 @@ in
 
   programs.home-manager.enable = true;
   home.enableNixpkgsReleaseCheck = false;
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 }
