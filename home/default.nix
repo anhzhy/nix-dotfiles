@@ -7,9 +7,11 @@ in
     ./p10k/p10k.nix
     ./git.nix
     ./btop.nix
+    ./browser.nix
   
     ./zsh
     ./fastfetch
+    ./packages
   ];
 
   home = {
@@ -18,7 +20,7 @@ in
   };
 
   home.file = {
-    ".config/btop".source = "${config_dir}/btop";
+    # ".config/btop".source = "${config_dir}/btop";
     ".config/cava".source = "${config_dir}/cava";
     ".config/hypr".source = "${config_dir}/hypr";
     ".config/mpv".source = "${config_dir}/mpv";
@@ -33,8 +35,7 @@ in
   };
 
   home.packages = (with pkgs; [
-    # Multimedia
-    mpv
+  
 
     # System monitoring and info
     # btop
@@ -49,8 +50,6 @@ in
     wofi
     rofi
 
-    # Screenshot tool
-    swappy
 
     # Audio visualizer
     cava
@@ -67,16 +66,16 @@ in
     hyprlock
     hypridle
     swww
-    eza
-    fzf
-    tldr
-    findutils
+    # eza
+    # fzf
+    # tldr
+    # findutils
 
     # Others
-    asciiquarium
-    cbonsai
-    cmatrix
-    pipes
+    # asciiquarium
+    # cbonsai
+    # cmatrix
+    # pipes
 
     # Compiler
     clang

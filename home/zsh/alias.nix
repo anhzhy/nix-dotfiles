@@ -6,8 +6,8 @@
       cat = "bat";
       weather = "curl -s v2.wttr.in";
 
-      ls = "eza --icons";
-      ll = "eza --long";
+      ls = "eza --icons --group-directories-first -1";
+      ll = "eza --long --group-directories-first -1";
       la = "eza --icons -a --group-directories-first -1";
       lla = "eza -a --group-directories-first -1 --no-user --long";
       lt = "eza --icons --tree --group-directories-first";
