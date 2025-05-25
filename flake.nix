@@ -31,7 +31,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
   let
-    username = "anhzhy";
+    username = "huyna";
     hostname = "nixos";
     system = "x86_64-linux";
     lib = nixpkgs.lib;

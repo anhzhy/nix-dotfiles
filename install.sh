@@ -44,4 +44,4 @@ mkdir -p ~/${VIDEOS}
 mkdir -p ~/${WORKSPACE}
 mkdir -p ~/"${PICTURES}/wallpapers" && cp -r wallpapers/* ~/${PICTURES}/wallpapers
 
-sudo nixos-rebuild boot --flake $SOURCE/#"${HOSTNAME}"
+sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"

@@ -27,15 +27,10 @@
     # --- Terminal Emulators ---
     kitty
 
-    # --- Status Bar and Launcher ---
-    waybar
-    wofi
-
     # --- Web Browsers ---
     firefox
 
     # --- Text Editors ---
-    neovim
     vim
     nano
 
@@ -53,11 +48,5 @@
     expat
     icu
     nss
-    # asciiquarium
-    # eza
-    # fzf
-    # tldr
-    # findutils
-    # clang
   ];
 }
