@@ -49,6 +49,7 @@
         "hyprland"
       ];
     };
+    wlr.enable = false;
   };
   
   programs.dconf.enable = true;

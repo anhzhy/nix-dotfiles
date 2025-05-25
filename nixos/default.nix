@@ -48,7 +48,12 @@
     wget
     openssl
     glib
+    glibc
     libevdev
+    zlib
+    expat
+    icu
+    nss
     # asciiquarium
     # eza
     # fzf
