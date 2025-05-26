@@ -2,13 +2,14 @@
 {
   home.packages = with pkgs; [
     # audacity
-    # dconf-editor
+    dconf-editor
     # gimp
-    # gnome-disk-utility
+    gnome-disk-utility
     # ldtk                              # 2D level editor
     # tiled                             # tile map editor
-    # libreoffice
+    libreoffice
     obs-studio
+    gromit-mpx
     # pitivi                            # video editing
     # gnome-calculator                  # calculator
     # mission-center                    # GUI resources monitor
