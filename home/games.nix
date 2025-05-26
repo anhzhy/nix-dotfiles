@@ -1,5 +1,7 @@
 { inputs, pkgs, ... }:
 {
-  inputs.nix-gaming.packages.${system}.osu-stable
-      nethack
+  home.packages = with pkgs; [
+    inputs.nix-gaming.packages.${system}.osu-stable
+    nethack 
+  ];
 }

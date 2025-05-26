@@ -7,7 +7,7 @@
         "height": 15,
         "width": 30,
         "padding": {
-          "top": 3
+          "top": 1
         }
       },
       "display": {

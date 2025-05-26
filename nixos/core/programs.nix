@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    inputs.nix-gaming.nixosModules.platformOptimizations
+  ];
+
   programs.hyprland = {
     enable = true;
     package = pkgs.hyprland;
@@ -13,6 +17,7 @@
     dedicatedServer.openFirewall = false;
     gamescopeSession.enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
+    platformOptimizations.enable = true;
   };
 
   programs.gamescope = {

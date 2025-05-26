@@ -1,5 +1,14 @@
 { ... }:
 {
+  imports = [
+    ./templates/btop.nix
+    ./templates/cava.nix
+    ./templates/hypr.nix
+    ./templates/kitty.nix
+    ./templates/rofi.nix
+    ./templates/waybar.nix
+  ];
+
   programs.wallust = {
     enable = true;
     settings = {
@@ -39,7 +48,7 @@
         { path = "templates/colors-hyprland.conf"; dest = "~/.config/hypr/wallust/wallust-hyprland.conf"; }
         { path = "templates/rofi.rasi"; dest = "~/.config/rofi/wallust/colors.rasi"; }
         { path = "templates/kitty.conf"; dest = "~/.config/kitty/wallust.conf"; }
-        { path = "templates/swaync.css"; dest = "~/.config/swaync/wallust/colors.css"; }
+        # { path = "templates/swaync.css"; dest = "~/.config/swaync/wallust/colors.css"; }
         { path = "templates/waybar.css"; dest = "~/.config/waybar/style.css"; }
       ];
     };

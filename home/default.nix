@@ -10,10 +10,14 @@ in
     ./browser.nix
     ./discord.nix
     ./obsidian.nix
+    ./games.nix
+    ./bat.nix
+    ./fzf.nix
 
     ./zsh
     ./fastfetch
     ./packages
+    ./wallust
   ];
 
   home = {
