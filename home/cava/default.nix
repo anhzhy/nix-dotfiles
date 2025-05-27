@@ -1,11 +1,13 @@
 { ... }:
 {
-  programs.cava.enable = true;
+  imports = [
+    ./shaders/bar_spectrum.nix
+    ./shaders/normalized_bars.nix
+    ./shaders/northern_lights.nix
+    ./shaders/pass_through.nix
+    ./shaders/spectrogram.nix
+    ./shaders/winamp_line_style_spectrum.nix
+  ];
 
-  home.file = {
-    ".config/cava/shaders" = {
-      source = "./shaders";
-      recursive = true;
-    };
-  };
+  programs.cava.enable = true;
 }

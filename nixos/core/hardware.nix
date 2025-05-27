@@ -1,4 +1,4 @@
-{ config, ... }: 
+{ config, pkgs, ... }: 
 {
   services.blueman.enable = true;
   hardware = {
@@ -29,5 +29,10 @@
 
   hardware.brillo.enable = true;
   hardware.enableRedistributableFirmware = true;
+
+  environment.systemPackages = with pkgs; [
+    bluez
+    bluez-tools
+  ];
 }
 

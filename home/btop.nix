@@ -218,6 +218,4 @@
       log_level = "WARNING";
     };
   };
-
-  home.packages = with pkgs; [ btop ];
 }

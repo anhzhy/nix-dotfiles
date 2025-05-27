@@ -5,8 +5,6 @@
     dconf-editor
     # gimp
     gnome-disk-utility
-    # ldtk                              # 2D level editor
-    # tiled                             # tile map editor
     libreoffice
     obs-studio
     gromit-mpx
