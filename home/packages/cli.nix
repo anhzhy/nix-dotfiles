@@ -14,11 +14,10 @@
     fd                                # find replacement
     ffmpeg
     file                              # Show file information
-    gtt                               # google translate TUI
+    # gtt                               # google translate TUI
     gtrash                            # rm replacement, put deleted files in system trash
     hevi                              # hex viewer
     hexdump
-    htop
     imv                               # image viewer
     jq                                # JSON processor
     killall
@@ -29,9 +28,7 @@
     mpv                               # video player
     ncdu                              # disk space
     nitch                             # systhem fetch util
-    # openssl
     onefetch                          # fetch utility for git repo
-    # pamixer                           # pulseaudio command line mixer
     playerctl                         # controller for media players
     poweralertd
     programmer-calculator

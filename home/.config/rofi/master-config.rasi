@@ -1,17 +1,21 @@
 configuration {
-	font:						"Fira Code SemiBold 12";
-	modi:                       "drun,run,filebrowser";
+    modi:                       "run,drun,window";
+    font:                       "Maple Mono Bold 16";
     show-icons:                 true;
+    icon-theme:                 "Papirus-dark";
+    terminal:                   "kitty";
+    drun-display-format:        "{icon} {name}";
+    disable-history:            true;
     display-drun:               "Apps";
     display-run:                "Run";
-    display-filebrowser:        "Files";
     display-window:             "Windows";
-	drun-display-format:        "{name}";
-	hover-select:               true;
+    hover-select:               true;
 	me-select-entry:            "MouseSecondary";
     me-accept-entry:            "MousePrimary";
-	window-format:              "{w} · {c} · {t}";
-	dpi:						1;
+    sidebar-mode:               true;
+    sorting-method:             "fzf";
+    lines:                      5;
+    location:                   0;
 }
 
 /* ---- Load wallust colors ---- */
