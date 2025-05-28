@@ -8,6 +8,7 @@
     # binsider
     bitwise                           # cli tool for bit / hex manipulation
     caligula                          # User-friendly, lightweight TUI for disk imaging
+    cava
     dysk                              # disk information
     eza                               # ls replacement
     entr                              # perform action when file change
@@ -53,8 +54,8 @@
     xdg-utils
     # xxd
 
-    # winetricks
-    # wineWowPackages.wayland
+    winetricks
+    wineWowPackages.wayland
 
     asciiquarium
     cbonsai                           # terminal screensaver

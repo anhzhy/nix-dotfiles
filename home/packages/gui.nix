@@ -8,6 +8,10 @@
     libreoffice
     obs-studio
     gromit-mpx
+    figma-linux
+    slack
+    bruno
+    koodo-reader
     # pitivi                            # video editing
     # gnome-calculator                  # calculator
     # mission-center                    # GUI resources monitor

@@ -1,10 +1,18 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (_: true);
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
+  ];
+  nixpkgs.overlays = [
+    inputs.nix-vscode-extensions.overlays.default
   ];
 
   imports = [

@@ -1,14 +1,5 @@
-{ ... }:
+{ username, ... }:
 {
-  imports = [
-    ./templates/btop.nix
-    ./templates/cava.nix
-    ./templates/hypr.nix
-    ./templates/kitty.nix
-    ./templates/rofi.nix
-    ./templates/waybar.nix
-  ];
-
   programs.wallust = {
     enable = true;
     settings = {
@@ -42,15 +33,32 @@
       #  100        Colors are exact opposite
       threshold = 11;
 
-      template = [
-        { path = "templates/btop.theme"; dest = "~/.config/btop/themes/wallust.theme"; }
-        { path = "templates/cava"; dest = "~/.config/cava/config"; }
-        { path = "templates/colors-hyprland.conf"; dest = "~/.config/hypr/wallust/wallust-hyprland.conf"; }
-        { path = "templates/rofi.rasi"; dest = "~/.config/rofi/wallust/colors.rasi"; }
-        { path = "templates/kitty.conf"; dest = "~/.config/kitty/wallust.conf"; }
-        # { path = "templates/swaync.css"; dest = "~/.config/swaync/wallust/colors.css"; }
-        { path = "templates/waybar.css"; dest = "~/.config/waybar/style.css"; }
-      ];
+      templates = {
+        btop = {
+          template = "btop.theme";
+          target = "~/.config/btop/themes/wallust.theme";
+        };
+        cava = {
+          template = "cava";
+          target = "~/.config/cava/config";
+        };
+        hypr = {
+          template = "hypr.conf";
+          target = "~/.config/hypr/wallust/wallust-hyprland.conf";
+        };
+        rofi = {
+          template = "rofi.rasi";
+          target = "~/.config/rofi/wallust/colors.rasi";
+        };
+        kitty = {
+          template = "kitty.conf";
+          target = "~/.config/kitty/kitty.conf";
+        };
+        waybar = {
+          template = "waybar.css";
+          target = "~/.config/waybar/style.css";
+        };
+      };
     };
   };
 }

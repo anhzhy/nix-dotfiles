@@ -6,9 +6,6 @@
       "logo": {
         "height": 15,
         "width": 30,
-        "padding": {
-          "top": 1
-        }
       },
       "display": {
         "separator": " ➜  "

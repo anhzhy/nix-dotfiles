@@ -42,6 +42,11 @@ mkdir -p ~/${MUSIC}
 mkdir -p ~/${PICTURES}
 mkdir -p ~/${VIDEOS}
 mkdir -p ~/${WORKSPACE}
-mkdir -p ~/"${PICTURES}/wallpapers" && cp -r wallpapers/* ~/${PICTURES}/wallpapers
+
+ASSETS="assets"
+CONFIG=".config"
+mkdir -p ~/${PICTURES}/wallpapers && cp -r ${ASSETS}/wallpapers/* ~/${PICTURES}/wallpapers
+mkdir -p ~/${CONFIG}/cava/shaders && cp -r ${ASSETS}/cava/* ~/${CONFIG}/cava/shaders
+mkdir -p ~/${CONFIG}/wallust/templates && cp -r ${ASSETS}/wallust/* ~/${CONFIG}/wallust/templates
 
 sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"
