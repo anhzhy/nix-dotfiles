@@ -7,6 +7,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    # flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -36,6 +37,7 @@
       nixpkgs,
       home-manager,
       nix-vscode-extensions,
+      flake-utils,
       ...
     }@inputs:
     let

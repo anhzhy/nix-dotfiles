@@ -28,9 +28,9 @@
       "workbench.editor.limit.enabled" = true;
       "workbench.editor.limit.value" = 10;
       "workbench.editor.limit.perEditorGroup" = true;
-      "workbench.editor.showTabs" = "none";
+      "workbench.editor.showTabs" = "multiple";
       "files.autoSave" = "onWindowChange";
-      "explorer.openEditors.visible" = 0;
+      "explorer.openEditors.visible" = 1;
       "breadcrumbs.enabled" = false;
       "editor.renderControlCharacters" = false;
       "workbench.activityBar.location" = "hidden";

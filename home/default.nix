@@ -1,5 +1,5 @@
-{ pkgs, username, inputs, ... }:
-let 
+{ pkgs, username, ... }:
+let
   config_dir = ./.config;
 in
 {
@@ -70,15 +70,18 @@ in
     ".config/waybar".source = "${config_dir}/waybar";
   };
 
-  home.packages = (with pkgs; [
-    neovim
-    
-    waybar
-    rofi-wayland
-    hyprlock
-    hypridle
-    swww
-  ]);
+  home.packages = (
+    with pkgs;
+    [
+      neovim
+      direnv
+      waybar
+      rofi-wayland
+      hyprlock
+      hypridle
+      swww
+    ]
+  );
 
   programs.home-manager.enable = true;
   home.enableNixpkgsReleaseCheck = false;
