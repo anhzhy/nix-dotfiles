@@ -9,8 +9,6 @@
           "left": 4
         },
         "type": "small",
-        "width": 48,
-        "height": 48
       },
       "display": {
         "separator": " ➜  "

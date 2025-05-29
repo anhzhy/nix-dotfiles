@@ -12,6 +12,7 @@
     slack
     bruno
     koodo-reader
+    mattermost-desktop
     # pitivi                            # video editing
     # gnome-calculator                  # calculator
     # mission-center                    # GUI resources monitor

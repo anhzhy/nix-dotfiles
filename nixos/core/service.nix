@@ -1,5 +1,26 @@
-{ pkgs, ... }:
 {
+  pkgs,
+  username,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
+    postgresql_15
+    pgadmin
+    gvfs
+    xfce.tumbler
+    gnome-keyring
+    openssh
+    udev
+    envfs
+    util-linux
+    libinput
+    rpcbind
+    nfs-utils
+    fwupd
+    dbus
+  ];
+
   services = {
     # Mount, trash, and other functionalities
     gvfs.enable = true;
@@ -43,6 +64,34 @@
         gcr
         gnome-settings-daemon
       ];
+    };
+
+    postgresql = {
+      enable = true;
+      package = pkgs.postgresql_15;
+      # dataDir = "/var/lib/postgresql/data";
+      authentication = ''
+        local all all trust
+        host all all 127.0.0.1/32 trust
+        host all all ::1/128 trust
+      '';
+      initialScript = pkgs.writeText "init-sql-script" ''
+        CREATE USER ${username} WITH PASSWORD '${username}';
+        CREATE DATABASE ${username} OWNER ${username};
+      '';
+    };
+
+    pgadmin = {
+      enable = true;
+      initialEmail = "${username}";
+      initialPasswordFile = ../../assets/pg/password.txt;
+      settings = {
+        ALLOWED_HOSTS = [
+          "192.168.0.0/16"
+          "127.0.0.1"
+          "localhost"
+        ];
+      };
     };
   };
 }

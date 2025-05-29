@@ -1,4 +1,4 @@
-{ username, ... }:
+{ ... }:
 {
   programs.wallust = {
     enable = true;

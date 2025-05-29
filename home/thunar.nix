@@ -1,4 +1,4 @@
-{ pkgs, config, username, ... }:
+{ pkgs, username, ... }:
 {
   # ctrl + m to toggle the menubar
   home.packages = with pkgs; [

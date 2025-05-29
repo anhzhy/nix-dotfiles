@@ -7,6 +7,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixpkgs-python38.url = "github:NixOS/nixpkgs/nixos-23.11";
     # flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
@@ -36,6 +37,7 @@
       self,
       nixpkgs,
       home-manager,
+      nixpkgs-python38,
       ...
     }@inputs:
     let
@@ -44,17 +46,19 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
+      pkgs23 = import nixpkgs-python38 { system = "x86_64-linux"; };
     in
     {
       nixosConfigurations = {
         "${hostname}" = nixpkgs.lib.nixosSystem {
-          inherit system lib pkgs;
+          inherit system;
           specialArgs = {
             inherit
               self
               inputs
               hostname
               username
+              pkgs23
               ;
           };
           modules = [
@@ -70,6 +74,7 @@
                   inputs
                   hostname
                   username
+                  pkgs23
                   ;
               };
             }

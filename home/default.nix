@@ -74,6 +74,7 @@ in
     with pkgs;
     [
       neovim
+      neovim-unwrapped
       direnv
       waybar
       rofi-wayland

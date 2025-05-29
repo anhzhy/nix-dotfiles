@@ -24,14 +24,14 @@ in
 
         ## C++
         llvm-vs-code-extensions.vscode-clangd
-        ms-vscode.cpptools
+        # ms-vscode.cpptools
 
         ## Go
         golang.go
 
         ## Rust
         rust-lang.rust-analyzer
-        # matklad.rust-analyzer   # deprecated
+        # matklad.rust-analyzer # deprecated
 
         ## Linting
         dbaeumer.vscode-eslint
@@ -48,7 +48,7 @@ in
       ]
       ++ [
         ## Node + React
-        pkgs.vscode-marketplace.msjsdiag.debugger-for-chrome
+        # pkgs.vscode-marketplace.msjsdiag.debugger-for-chrome # deprecated
 
         ## PHP + Laravel
         pkgs.vscode-marketplace.onecentlin.laravel-blade
