@@ -10,7 +10,6 @@
       "docker"
       "input"
       "audio"
-      "gamemode"
     ];
     shell = pkgs.zsh;
   };

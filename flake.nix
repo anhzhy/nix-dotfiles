@@ -36,8 +36,6 @@
       self,
       nixpkgs,
       home-manager,
-      nix-vscode-extensions,
-      flake-utils,
       ...
     }@inputs:
     let
@@ -50,7 +48,7 @@
     {
       nixosConfigurations = {
         "${hostname}" = nixpkgs.lib.nixosSystem {
-          inherit system;
+          inherit system lib pkgs;
           specialArgs = {
             inherit
               self

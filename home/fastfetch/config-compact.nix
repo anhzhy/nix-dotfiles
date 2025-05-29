@@ -9,7 +9,8 @@
           "left": 4
         },
         "type": "small",
-        "width": 40
+        "width": 48,
+        "height": 48
       },
       "display": {
         "separator": " ➜  "
