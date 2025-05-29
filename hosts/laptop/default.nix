@@ -42,7 +42,7 @@
   };
 
   powerManagement = {
-  	enable = true;
+    enable = true;
     cpuFreqGovernor = "performance";
   };
 

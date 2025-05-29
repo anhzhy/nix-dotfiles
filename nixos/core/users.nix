@@ -1,4 +1,4 @@
-{ config, pkgs, username, ... }:
+{ pkgs, username, ... }:
 {
   users.users.${username} = {
     isNormalUser = true;
@@ -8,14 +8,15 @@
       "wheel"
       "bluetooth"
       "docker"
-      "input" 
+      "input"
       "audio"
+      "gamemode"
     ];
     shell = pkgs.zsh;
   };
 
   users.users.root = {
-    shell = pkgs.zsh;  
+    shell = pkgs.zsh;
   };
 
   nix.settings.allowed-users = [ "${username}" ];

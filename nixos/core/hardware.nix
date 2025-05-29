@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ pkgs, ... }:
 {
   services.blueman.enable = true;
   hardware = {
@@ -35,4 +35,3 @@
     bluez-tools
   ];
 }
-

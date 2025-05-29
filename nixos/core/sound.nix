@@ -1,4 +1,9 @@
-{ pkgs, lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.nix-gaming.nixosModules.pipewireLowLatency
@@ -16,8 +21,8 @@
   };
 
   hardware.alsa.enablePersistence = true;
-  environment.systemPackages = with pkgs; [ 
+  environment.systemPackages = with pkgs; [
     pamixer
-    pavucontrol 
+    pavucontrol
   ];
 }

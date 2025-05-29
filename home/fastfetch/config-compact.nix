@@ -5,11 +5,11 @@
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
       "logo": {
         "padding": {
-          "top": 3,
+          "top": 2,
           "left": 4
         },
         "type": "small",
-        "width": 32
+        "width": 40
       },
       "display": {
         "separator": " ➜  "

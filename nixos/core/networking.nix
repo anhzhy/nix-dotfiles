@@ -2,7 +2,9 @@
 {
   networking = {
     hostName = "${hostname}";
+    # wireless.enable = true;
     networkmanager.enable = true;
+    networkmanager.wifi.powersave = true;
     enableIPv6 = false;
     nameservers = [
       "8.8.8.8"
@@ -26,5 +28,8 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet
+    iw
+  ];
 }

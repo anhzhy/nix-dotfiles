@@ -1,4 +1,9 @@
-{ pkgs, lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
@@ -22,10 +27,18 @@
       "systemd.mask=systemd-vconsole-setup.service"
       "systemd.mask=dev-tpmrm0.device"
     ];
-    initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "usbhid" "sd_mod" "sdhci_pci" ];
+    kernelPackages = pkgs.linuxPackages_latest;
+    initrd.availableKernelModules = [
+      "nvme"
+      "xhci_pci"
+      "usb_storage"
+      "usbhid"
+      "sd_mod"
+      "sdhci_pci"
+    ];
     loader.systemd-boot.enable = lib.mkForce false;
     initrd.systemd.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [sbctl];
+  environment.systemPackages = with pkgs; [ sbctl ];
 }

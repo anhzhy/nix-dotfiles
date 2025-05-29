@@ -16,6 +16,8 @@
 
     # Python
     python310
+    libxml2
+    libxslt
     # python312Packages.ipython
   ];
 

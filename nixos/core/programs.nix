@@ -1,4 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.nix-gaming.nixosModules.platformOptimizations
@@ -56,7 +60,7 @@
     };
     wlr.enable = false;
   };
-  
+
   programs.dconf.enable = true;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [

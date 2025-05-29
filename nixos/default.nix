@@ -55,5 +55,6 @@
     expat
     icu
     nss
+    wsdd
   ];
 }
