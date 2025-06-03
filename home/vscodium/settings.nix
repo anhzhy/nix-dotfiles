@@ -60,6 +60,10 @@
       "python.languageServer" = "Pylance";
       "python.analysis.typeCheckingMode" = "basic";
       "python.testing.pytestEnabled" = true;
+      "[python]" = {
+        "editor.formatOnSave" = true;
+        "editor.defaultFormatter" = "ms-python.black-formatter";
+      };
       "python.formatting.provider" = "black";
       "python.linting.enabled" = true;
       "python.linting.pylintEnabled" = true;

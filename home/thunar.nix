@@ -30,7 +30,7 @@
     "file:///home/${username}/Workspace Workspace"
   ];
 
-  home.file.".config/xarchiver/xarchiverrc".text = ''
+  xdg.configFile."xarchiver/xarchiverrc".text = ''
     [xarchiver]
     preferred_format=0
     prefer_unzip=true
@@ -62,7 +62,7 @@
     remove_files=false
   '';
 
-  home.file.".config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml".text = ''
+  xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/thunar.xml".text = ''
     <?xml version="1.0" encoding="UTF-8"?>
 
     <channel name="thunar" version="1.0">

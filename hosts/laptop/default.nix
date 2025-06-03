@@ -18,6 +18,7 @@
       percentageCritical = 5;
       percentageAction = 3;
       criticalPowerAction = "PowerOff";
+      usePercentageForPolicy = true;
     };
 
     tlp.settings = {
@@ -51,6 +52,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    wireplumber
     acpi
     brightnessctl
     cpupower-gui

@@ -2,10 +2,11 @@
 {
   home.packages = with pkgs; [
     ani-cli
-    # aoc-cli                           # Advent of Code command-line tool
-    # asciinema
-    # asciinema-agg
-    # binsider
+    aria2
+    aoc-cli # Advent of Code command-line tool
+    asciinema
+    asciinema-agg
+    binsider
     bitwise # cli tool for bit / hex manipulation
     caligula # User-friendly, lightweight TUI for disk imaging
     cava
@@ -24,9 +25,10 @@
     libnotify
     lowfi
     pciutils
-    # man-pages                         # extra man pages
-    # mimeo
+    man-pages # extra man pages
+    mimeo
     mpv # video player
+
     ncdu # disk space
     nitch # systhem fetch util
     onefetch # fetch utility for git repo
@@ -46,12 +48,11 @@
     wavemon # monitoring for wireless network devices
     wl-clipboard # clipboard utils for wayland (wl-copy, wl-paste)
     wget
-    # woomer
     yad
     yt-dlp
     xdg-user-dirs
     xdg-utils
-    # xxd
+    xxd
 
     winetricks
     wineWowPackages.wayland

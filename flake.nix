@@ -8,7 +8,6 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixpkgs-python38.url = "github:NixOS/nixpkgs/nixos-23.11";
-    # flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
       url = "github:nix-community/home-manager";

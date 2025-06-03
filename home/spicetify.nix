@@ -1,5 +1,4 @@
 {
-  colors,
   inputs,
   pkgs,
   ...
@@ -11,26 +10,22 @@
 
   programs.spicetify =
     let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+      spicetifyPkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
     in
     {
       enable = true;
 
-      enabledExtensions = with spicePkgs.extensions; [
+      enabledExtensions = with spicetifyPkgs.extensions; [
         adblock
         hidePodcasts
-        shuffle # shuffle+ (special characters are sanitized out of extension names)
+        shuffle
       ];
-      enabledCustomApps = with spicePkgs.apps; [
-        newReleases
-        ncsVisualizer
-      ];
-      enabledSnippets = with spicePkgs.snippets; [
+      enabledSnippets = with spicetifyPkgs.snippets; [
         rotatingCoverart
         pointer
       ];
 
-      theme = spicePkgs.themes.catppuccin;
+      theme = spicetifyPkgs.themes.catppuccin;
       colorScheme = "mocha";
     };
 }

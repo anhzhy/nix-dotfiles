@@ -20,7 +20,10 @@ in
 
         ## Python
         ms-python.python
+        ms-python.debugpy
         ms-python.vscode-pylance
+        ms-python.black-formatter
+        ms-python.isort
 
         ## C++
         llvm-vs-code-extensions.vscode-clangd
@@ -54,6 +57,14 @@ in
         pkgs.vscode-marketplace.onecentlin.laravel-blade
         pkgs.vscode-marketplace.bmewburn.vscode-intelephense-client
         pkgs.vscode-marketplace.xdebug.php-debug
+
+        # Odoo
+        pkgs.vscode-marketplace.dotjoshjohnson.xml
+        pkgs.vscode-marketplace.mechatroner.rainbow-csv
+        pkgs.vscode-marketplace.jigar-patel.odoosnippets
+
+        # Jinja
+        pkgs.vscode-marketplace.wholroyd.jinja
       ];
   };
 }

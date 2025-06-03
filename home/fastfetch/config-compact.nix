@@ -44,12 +44,6 @@
           "keyColor": "yellow"
         },
         {
-          "type": "memory",
-          "key": "   ",
-          "keyColor": "green",
-          "format": "{1} / {2}"
-        },
-        {
           "type": "uptime",
           "key": "  󱫐 ",
           "keyColor": "red"

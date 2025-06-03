@@ -23,6 +23,7 @@
       # Python
       # python3
       # python312Packages.ipython
+      sassc
     ]
     ++ [
       pkgs23.python38
@@ -30,15 +31,6 @@
       pkgs23.libxslt
       pkgs23.openldap
       pkgs23.cyrus_sasl
-      # pkgs23.python38Packages.numpy
-      # pkgs23.python38Packages.requests
+      pkgs23.libstdcxx5
     ];
-
-  # devShells."x86_64-linux".default = pkgs.mkShell {
-  #   packages = with pkgs; [
-  #     nodejs
-  #     python3
-  #   ];
-
-  # };
 }

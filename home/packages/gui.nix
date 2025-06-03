@@ -1,12 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # audacity
     dconf-editor
     # gimp
     gnome-disk-utility
     libreoffice
-    obs-studio
     gromit-mpx
     figma-linux
     slack

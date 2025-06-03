@@ -33,15 +33,14 @@
     ];
   };
 
-  # programs.gamemode = {
-  #   enable = true;
-  #   settings = {
-  #     general = {
-  #       softrealtime = "auto";
-  #       renice = 15;
-  #     };
-  #   };
-  # };
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      custom = {
+        start = "${pkgs.util-linux}/bin/renice -n -5 -u $USER";
+      };
+    };
+  };
 
   programs.zsh.enable = true;
   programs.gnupg.agent = {
@@ -71,5 +70,10 @@
     expat
     icu
     nss
+  ];
+
+  environment.systemPackages = with pkgs; [
+    steam-run
+    lutris
   ];
 }

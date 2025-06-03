@@ -9,4 +9,9 @@
       defaultSession = "hyprland";
     };
   };
+
+  security.pam.services.sddm = {
+    enableGnomeKeyring = true;
+    startSession = true;
+  };
 }
