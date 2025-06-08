@@ -23,15 +23,14 @@
     jq # JSON processor
     killall
     libnotify
-    lowfi
     pciutils
     man-pages # extra man pages
     mimeo
     mpv # video player
-
     ncdu # disk space
     nitch # systhem fetch util
     onefetch # fetch utility for git repo
+    zscroll # scroll text
     playerctl # controller for media players
     poweralertd
     programmer-calculator

@@ -44,7 +44,7 @@
         };
         hypr = {
           template = "hypr.conf";
-          target = "~/.config/hypr/wallust/wallust-hyprland.conf";
+          target = "~/.config/hypr/wallust.conf";
         };
         rofi = {
           template = "rofi.rasi";

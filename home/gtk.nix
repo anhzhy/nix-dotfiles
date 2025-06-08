@@ -46,4 +46,8 @@
     package = pkgs.bibata-cursors;
     size = 24;
   };
+
+  home.sessionVariables = {
+    GTK_THEME = "Colloid-Green-Dark-Gruvbox";
+  };
 }

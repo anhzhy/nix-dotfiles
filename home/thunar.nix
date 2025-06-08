@@ -1,6 +1,5 @@
 { pkgs, username, ... }:
 {
-  # ctrl + m to toggle the menubar
   home.packages = with pkgs; [
     xfce.thunar
     xfce.xfconf
@@ -12,14 +11,6 @@
     xarchiver
   ];
 
-  home.sessionVariables = {
-    XDG_ICON_DIR = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
-    FileManager = "Thunar";
-    TerminalEmulator = "kitty";
-    WebBrowser = "zen";
-  };
-
-  # bookmarks for the side pane
   gtk.gtk3.bookmarks = [
     "file:///home/${username}/Documents Documents"
     "file:///home/${username}/Downloads Downloads"

@@ -33,6 +33,26 @@
         "type": "github"
       }
     },
+    "auto-cpufreq": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1748372346,
+        "narHash": "sha256-7y7NZ6uW0GbT0h4gqfD2xvRuJj5IlPGw32oIc9Twga8=",
+        "owner": "AdnanHodzic",
+        "repo": "auto-cpufreq",
+        "rev": "becd5b89963fa54fef3566147f3fd2087f8a5842",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AdnanHodzic",
+        "repo": "auto-cpufreq",
+        "type": "github"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1746291859,
@@ -503,21 +523,6 @@
         "type": "github"
       }
     },
-    "nix-flatpak": {
-      "locked": {
-        "lastModified": 1744659587,
-        "narHash": "sha256-xJnbmRVte13akgn+Prg06IaRHJ5OX3uVltwsCP/mxoc=",
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
-        "rev": "928d868a9141b48f152d3b2b00c433e688d4b106",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gmodena",
-        "repo": "nix-flatpak",
-        "type": "github"
-      }
-    },
     "nix-gaming": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -584,22 +589,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
-    "nixpkgs-python38": {
-      "locked": {
-        "lastModified": 1720535198,
-        "narHash": "sha256-zwVvxrdIzralnSbcpghA92tWu2DV2lwv89xZc8MTrbg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "205fd4226592cc83fd4c0885a3e4c9c400efabb5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-23.11",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -741,14 +730,13 @@
     },
     "root": {
       "inputs": {
+        "auto-cpufreq": "auto-cpufreq",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "lanzaboote": "lanzaboote",
-        "nix-flatpak": "nix-flatpak",
         "nix-gaming": "nix-gaming",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_4",
-        "nixpkgs-python38": "nixpkgs-python38",
         "nvchad4nix": "nvchad4nix",
         "spicetify-nix": "spicetify-nix",
         "zen-browser": "zen-browser"

@@ -1,20 +1,12 @@
 {
   pkgs,
   inputs,
-  lib,
   ...
 }:
 
 {
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "steam"
-      "steam-original"
-      "steam-run"
-    ];
-
+  nixpkgs.config.allowUnfreePredicate = (_: true);
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
@@ -54,14 +46,6 @@
     # --- Utilities ---
     curl
     wget
-    openssl
-    glib
-    glibc
-    libevdev
-    zlib
-    expat
-    icu
-    nss
     wsdd
   ];
 }

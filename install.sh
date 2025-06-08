@@ -26,6 +26,7 @@ else
   cp "$SOURCE"/hosts/"$DEVICE"/*.nix "$SOURCE"/hosts/"$HOSTNAME"
   sudo nixos-generate-config --show-hardware-config > "$SOURCE/hosts/$HOSTNAME/hardware-configuration.nix" 2>/dev/null
   sed -i 's/hostname\s*=\s*"\([^"]*\)"/hostname = "'"$HOSTNAME"'"/' ./flake.nix
+  sed -i 's/device\s*=\s*"\([^"]*\)"/device = "'"$DEVICE"'"/' ./flake.nix
   git add .
 fi
 
@@ -46,7 +47,7 @@ mkdir -p ~/${WORKSPACE}
 ASSETS="assets"
 CONFIG=".config"
 mkdir -p ~/${PICTURES}/wallpapers && cp -r ${ASSETS}/wallpapers/* ~/${PICTURES}/wallpapers
-mkdir -p ~/${CONFIG}/cava/shaders && cp -r ${ASSETS}/cava/* ~/${CONFIG}/cava/shaders
+# mkdir -p ~/${CONFIG}/cava/shaders && cp -r ${ASSETS}/cava/* ~/${CONFIG}/cava/shaders
 mkdir -p ~/${CONFIG}/wallust/templates && cp -r ${ASSETS}/wallust/* ~/${CONFIG}/wallust/templates
 
 sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"

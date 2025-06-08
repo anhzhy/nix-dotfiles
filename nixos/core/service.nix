@@ -6,7 +6,6 @@
 {
   environment.systemPackages = with pkgs; [
     postgresql_15
-    pgadmin
     gvfs
     xfce.tumbler
     gnome-keyring
@@ -82,21 +81,6 @@
         CREATE DATABASE ${username};
         GRANT ALL PRIVILEGES ON DATABASE ${username} TO ${username};
       '';
-    };
-
-    pgadmin = {
-      enable = true;
-      initialEmail = "postgres@gmail.com";
-      initialPasswordFile = ../../assets/pgadmin/password.txt;
-      openFirewall = true;
-      settings = {
-        ALLOWED_HOSTS = [
-          "192.168.0.0/16"
-          "127.0.0.1"
-          "localhost"
-        ];
-        MAX_LOGIN_ATTEMPTS = 0;
-      };
     };
   };
 }

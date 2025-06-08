@@ -5,9 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nixpkgs-python38.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -29,6 +27,10 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -36,16 +38,15 @@
       self,
       nixpkgs,
       home-manager,
-      nixpkgs-python38,
       ...
     }@inputs:
     let
       username = "huyna";
       hostname = "nixos";
+      device = "laptop";
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs23 = import nixpkgs-python38 { system = "x86_64-linux"; };
     in
     {
       nixosConfigurations = {
@@ -57,7 +58,7 @@
               inputs
               hostname
               username
-              pkgs23
+              device
               ;
           };
           modules = [
@@ -73,7 +74,7 @@
                   inputs
                   hostname
                   username
-                  pkgs23
+                  device
                   ;
               };
             }

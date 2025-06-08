@@ -25,11 +25,6 @@
         enableGraphical = true;
       };
     };
-
-    firmware = with pkgs; [
-      linux-firmware
-      firmwareLinuxNonfree
-    ];
   };
 
   hardware.brillo.enable = true;

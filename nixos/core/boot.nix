@@ -19,16 +19,11 @@
     kernelParams = [
       "quiet"
       "splash"
-      "boot.shell_on_fail"
       "loglevel=3"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
-      "mmio_stale_data=full,nosmt"
+      "boot.shell_on_fail"
+      "udev.log_level=3"
       "systemd.mask=systemd-vconsole-setup.service"
       "systemd.mask=dev-tpmrm0.device"
-      "usbcore.autosuspend=-1"
-      "usbcore.quirks=1-14:0x0001"
     ];
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.availableKernelModules = [
