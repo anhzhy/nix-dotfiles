@@ -177,10 +177,5 @@
       "noblur, tag:games*"
       "fullscreen, tag:games*"
     ];
-
-    # layerRules = [
-    #   "blur, rofi"
-    #   "ignorezero, rofi"
-    # ];
   };
 }

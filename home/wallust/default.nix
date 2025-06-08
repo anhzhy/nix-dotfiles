@@ -61,4 +61,6 @@
       };
     };
   };
+
+  xdg.configFile."wallust/templates".source = ./templates;
 }

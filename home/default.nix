@@ -17,7 +17,6 @@ in
     ./lazygit.nix
     ./gtk.nix
     ./viewnior.nix
-    ./wallust.nix
     ./spicetify.nix
     ./thunar.nix
     ./obs-studio.nix
@@ -30,6 +29,7 @@ in
     ./vscodium
     ./hyprland
     ./cava
+    ./wallust
   ];
 
   home = {
@@ -38,10 +38,8 @@ in
   };
 
   home.file = {
-    # ".config/hypr".source = "${config_dir}/hypr";
     ".config/mpv".source = "${config_dir}/mpv";
     ".config/nvim".source = "${config_dir}/nvim";
-    # ".config/rofi".source = "${config_dir}/rofi";
     ".config/waybar".source = "${config_dir}/waybar";
   };
 

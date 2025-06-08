@@ -40,14 +40,10 @@ WORKSPACE="Workspace"
 mkdir -p ~/${DOCUMENTS}
 mkdir -p ~/${DOWNLOADS}
 mkdir -p ~/${MUSIC}
-mkdir -p ~/${PICTURES}
+mkdir -p ~/${PICTURES} && mkdir -p ~/${PICTURES}/wallpapers
 mkdir -p ~/${VIDEOS}
 mkdir -p ~/${WORKSPACE}
 
-ASSETS="assets"
-CONFIG=".config"
-mkdir -p ~/${PICTURES}/wallpapers && cp -r ${ASSETS}/wallpapers/* ~/${PICTURES}/wallpapers
-# mkdir -p ~/${CONFIG}/cava/shaders && cp -r ${ASSETS}/cava/* ~/${CONFIG}/cava/shaders
-mkdir -p ~/${CONFIG}/wallust/templates && cp -r ${ASSETS}/wallust/* ~/${CONFIG}/wallust/templates
+cp -r assets/wallpapers/* ~/${PICTURES}/wallpapers
 
 sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"
