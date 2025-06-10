@@ -15,16 +15,24 @@ in
       "CTRL ALT, L, exec, ${scripts}/LockScreen.sh"
       "CTRL ALT, P, exec, ${scripts}/Wlogout.sh"
 
-      # Brightness
-
-      # Media
-
       # Common
       "${main}, Return, exec, ${terminal}"
       "${main}, E, exec, ${files}"
       "${main}, B, exec, xdg-open 'https://'"
-      "${main}, D, exec, pkill rofi || true && rofi -show drun -modi drun,filebrowser,run,window"
+      "${main}, D, exec, pgrep -x rofi > /dev/null && pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
 
+      # Features
+      "${main}, F, fullscreen"
+      "${main} SHIFT, F, fullscreen, 1"
+      "${main}, SPACE, togglefloating"
+      "${main} ALT, SPACE, exec, hyprctl dispatch workspaceopt allfloat"
+      "${main} SHIFT, Return, exec, [float; move 15% 5%; size 70% 60%] ${terminal}"
+
+      "${main} ALT, mouse_down, exec, hyprctl keyword cursor:zoom_factor '$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 2.0}')'"
+      "${main} ALT, mouse_up, exec, hyprctl keyword cursor:zoom_factor '$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 2.0}')'"
+
+      "${main} CTRL ALT, B, exec, pkill -SIGUSR1 waybar"
+      "${main} ALT, B, exec, ${scripts}/ChangeBlur.sh"
       # --- Window ---
       # Move windows
       "${main} CTRL, left, movewindow, l"
@@ -116,8 +124,6 @@ in
       "${main}, mouse_up, workspace, e-1"
       "${main}, period, workspace, e+1"
       "${main}, comma, workspace, e-1"
-
-      # --- Features / Extras ---
     ];
 
     binde = [

@@ -5,5 +5,9 @@
     ./config-compact.nix
   ];
 
-  home.packages = with pkgs; [ fastfetch ];
+  home.packages = with pkgs; [
+    fastfetch
+    bc
+    chafa
+  ];
 }

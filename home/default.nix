@@ -1,7 +1,4 @@
-{ pkgs, username, ... }:
-let
-  config_dir = ./.config;
-in
+{ username, ... }:
 {
   imports = [
     ./p10k/p10k.nix
@@ -30,28 +27,23 @@ in
     ./hyprland
     ./cava
     ./wallust
+    ./mpv
+    ./nvim
+    ./waybar
   ];
 
+  programs.home-manager.enable = true;
+  home.enableNixpkgsReleaseCheck = false;
   home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
   };
 
-  home.file = {
-    ".config/mpv".source = "${config_dir}/mpv";
-    ".config/nvim".source = "${config_dir}/nvim";
-    ".config/waybar".source = "${config_dir}/waybar";
-  };
-
-  home.packages = (
-    with pkgs;
-    [
-      neovim-unwrapped
-      waybar
-    ]
-  );
-
-  programs.home-manager.enable = true;
-  home.enableNixpkgsReleaseCheck = false;
-  home.stateVersion = "25.05";
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  home.stateVersion = "25.05"; # Did you read the comment?
 }

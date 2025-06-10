@@ -12,7 +12,7 @@
     koodo-reader
     mattermost-desktop
     telegram-desktop
-    # pitivi                            # video editing
+    # pitivi # video editing
     gnome-calculator # calculator
     mission-center # GUI resources monitor
     # soundwireserver

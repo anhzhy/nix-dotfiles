@@ -1,5 +1,4 @@
 #!/bin/bash
-
 step=10
 
 # Get brightness

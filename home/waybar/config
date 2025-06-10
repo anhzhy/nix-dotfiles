@@ -1,0 +1,42 @@
+{
+  "include": [
+    "$HOME/.config/waybar/modules/defaults",
+    "$HOME/.config/waybar/modules/customs",
+    "$HOME/.config/waybar/modules/groups",
+    "$HOME/.config/waybar/modules/workspaces"
+  ],
+  "layer": "top",
+  "exclusive": true,
+  "passthrough": false,
+  "position": "top",
+  "spacing": 3,
+  "fixed-center": true,
+  "ipc": true,
+  "margin-top": 3,
+  "margin-left": 8,
+  "margin-right": 8,
+  "modules-left": [
+    "group/tray",
+    "custom/separator#line",
+    "hyprland/workspaces#kanji",
+    "custom/separator#line",
+    "custom/cava",
+    "custom/mpris"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/swaync"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "temperature",
+    "disk",
+    "battery",
+    "custom/separator#line",
+    "backlight",
+    "group/audio",
+    "custom/separator#line",
+    "custom/power"
+  ]
+}

@@ -8,7 +8,7 @@
 
     "waybar &"
     "nm-applet --indicator &"
-    "blueman-applet &"
+    # "blueman-applet &"
 
     "wl-paste --type text --watch cliphist store"
     "wl-paste --type image --watch cliphist store"
