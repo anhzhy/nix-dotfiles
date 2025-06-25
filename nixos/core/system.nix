@@ -28,6 +28,10 @@
     };
   };
 
+  systemd.tmpfiles.rules = [
+    "L /bin/bash - - - - /run/current-system/sw/bin/bash"
+  ];
+
   # To prevent getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 
