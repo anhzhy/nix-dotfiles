@@ -19,6 +19,7 @@
       "editor.minimap.enabled" = false;
       "workbench.startupEditor" = "none";
 
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "editor.formatOnSave" = true;
       "editor.formatOnType" = true;
       "editor.formatOnPaste" = true;
@@ -40,7 +41,6 @@
       "editor.scrollbar.vertical" = "hidden";
       "editor.scrollbar.horizontal" = "hidden";
       "workbench.layoutControl.enabled" = false;
-
       "editor.mouseWheelZoom" = true;
 
       # C/C++
@@ -71,6 +71,10 @@
       # Nix
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
+      "[nix]" = {
+        "editor.formatOnSave" = true;
+        "editor.defaultFormatter" = "jnoortheen.nix-ide";
+      };
 
       # Node.js / TypeScript / React
       "eslint.enable" = true;

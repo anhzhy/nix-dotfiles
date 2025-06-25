@@ -22,5 +22,8 @@
 
     # Python
     python3Full
+
+    # Aylur GTK Shell
+    ags
   ];
 }

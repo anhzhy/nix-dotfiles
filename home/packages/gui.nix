@@ -19,5 +19,6 @@
     # zenity
     dbeaver-bin
     qbittorrent
+    qbittorrent-enhanced
   ];
 }

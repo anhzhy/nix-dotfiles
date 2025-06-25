@@ -10,7 +10,6 @@ let
     directory = [ "thunar.desktop" ];
     office = [ "onlyoffice.desktop" ];
     pdf = [ "org.gnome.Evince.desktop" ];
-    terminal = [ "kitty.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
   };
 
@@ -67,7 +66,6 @@ let
       "application/rtf"
     ];
     pdf = [ "application/pdf" ];
-    terminal = [ "inode/directory" ];
     archive = [
       "application/zip"
       "application/rar"
@@ -89,6 +87,7 @@ in
   xdg.mimeApps.defaultApplications = associations;
 
   home.sessionVariables = {
+    TERMINAL = "kitty";
     # prevent wine from creating file associations
     WINEDLLOVERRIDES = "winemenubuilder.exe=d";
   };
