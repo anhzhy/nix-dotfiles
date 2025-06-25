@@ -11,7 +11,7 @@
     gnome-keyring
     openssh
     udev
-    envfs
+    # envfs
     util-linux
     libinput
     rpcbind
@@ -37,7 +37,7 @@
     udev.enable = true;
 
     # Filesystem for environment variables
-    envfs.enable = true;
+    # envfs.enable = true;
 
     # Discard unused blocks on SSDs, improving performance and longevity
     fstrim = {
