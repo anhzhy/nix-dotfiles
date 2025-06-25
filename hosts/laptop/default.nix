@@ -9,6 +9,7 @@
     inputs.auto-cpufreq.nixosModules.default
     ./hardware-configuration.nix
     ../../nixos
+    ../../overlays
   ];
 
   services = {

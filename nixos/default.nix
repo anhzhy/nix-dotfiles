@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 
@@ -9,9 +8,6 @@
   nixpkgs.config.allowUnfreePredicate = (_: true);
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
-  ];
-  nixpkgs.overlays = [
-    inputs.nix-vscode-extensions.overlays.default
   ];
 
   imports = [
