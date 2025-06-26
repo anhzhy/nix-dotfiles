@@ -36,6 +36,7 @@ in
       "${main} ALT, B, exec, ${scripts}/ChangeBlur.sh"
       "${main} SHIFT, G, exec, ${scripts}/GameMode.sh"
       "${main} SHIFT, D, exec, ${scripts}/DarkLight.sh"
+      "${main} ALT, R, exec, ${scripts}/Refresh.sh"
       "${main}, W, exec, ${scripts}/WallpaperSelect.sh"
 
       ", PRINT, exec, ${scripts}/ScreenShot.sh --now"
