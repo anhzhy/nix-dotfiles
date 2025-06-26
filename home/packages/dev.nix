@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -18,6 +19,7 @@
     valgrind
     stdenv.cc.cc.lib
     extra-cmake-modules
+    gobject-introspection
     llvmPackages_20.clang-tools
 
     # Python
@@ -25,5 +27,6 @@
 
     # Aylur GTK Shell
     ags
+    inputs.astal.packages.${system}.default
   ];
 }
