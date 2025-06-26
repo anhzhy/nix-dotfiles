@@ -51,6 +51,7 @@
     xdg-user-dirs
     xdg-utils
     xxd
+    zathura # pdf reader
 
     winetricks
     wineWowPackages.wayland
