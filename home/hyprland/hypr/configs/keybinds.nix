@@ -18,6 +18,7 @@ in
 
       # Common
       "${main}, Return, exec, ${terminal}"
+      "${main} SHIFT, Return, exec, [float; move 15% 5%; size 70% 60%] ${terminal}"
       "${main}, E, exec, ${files}"
       "${main}, B, exec, xdg-open 'https://'"
       "${main}, D, exec, pgrep -x rofi > /dev/null && pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
@@ -27,7 +28,6 @@ in
       "${main} SHIFT, F, fullscreen, 1"
       "${main}, SPACE, togglefloating"
       "${main} ALT, SPACE, exec, hyprctl dispatch workspaceopt allfloat"
-      "${main} SHIFT, Return, exec, [float; move 15% 5%; size 70% 60%] ${terminal}"
 
       "${main} ALT, mouse_down, exec, hyprctl keyword cursor:zoom_factor '$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 2.0}')'"
       "${main} ALT, mouse_up, exec, hyprctl keyword cursor:zoom_factor '$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 2.0}')'"
@@ -38,6 +38,7 @@ in
       "${main} SHIFT, D, exec, ${scripts}/DarkLight.sh"
       "${main} ALT, R, exec, ${scripts}/Refresh.sh"
       "${main}, W, exec, ${scripts}/WallpaperSelect.sh"
+      "${main}, T, exec, ${scripts}/TouchPad.sh"
 
       ", PRINT, exec, ${scripts}/ScreenShot.sh --now"
       "CTRL, PRINT, exec, ${scripts}/ScreenShot.sh --area"
