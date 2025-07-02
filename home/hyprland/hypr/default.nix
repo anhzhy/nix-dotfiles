@@ -31,14 +31,14 @@
       };
 
       render = {
-        explicit_sync = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
-        explicit_sync_kms = 2; # 0 = off, 1 = on, 2 = auto based on gpu driver.
-        direct_scanout = 2; # 0 = off, 1 = on, 2 = auto (on with content type ‘game’)
+        explicit_sync = 2;
+        explicit_sync_kms = 2;
+        direct_scanout = 2;
       };
 
       cursor = {
         sync_gsettings_theme = true;
-        no_hardware_cursors = 2; # change to 1 if want to disable
+        no_hardware_cursors = 2;
         enable_hyprcursor = true;
         warp_on_change_workspace = 2;
         no_warps = true;

@@ -1,7 +1,7 @@
 #!/bin/bash
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 
-HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+HYPRGAMEMODE=$(hyprctl getoption animations:enabled | sed -n '1p' | awk '{print $2}')
 if [ "$HYPRGAMEMODE" = 1 ] ; then
     hyprctl --batch "\
         keyword animations:enabled 0;\
