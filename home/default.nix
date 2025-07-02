@@ -20,6 +20,7 @@
     ./fcitx5.nix
     ./xdg-mimes.nix
 
+    ./ags
     ./zsh
     ./fastfetch
     ./packages

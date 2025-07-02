@@ -1,11 +1,11 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
   home.packages = with pkgs; [
     # Nix
+    nix-direnv
     nixd
     nixfmt-rfc-style
 
@@ -25,8 +25,8 @@
     # Python
     python3Full
 
-    # Aylur GTK Shell
-    ags
-    inputs.astal.packages.${system}.default
+    # NodeJS/NestJS
+    nodejs
+    nest-cli
   ];
 }

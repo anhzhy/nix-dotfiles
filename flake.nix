@@ -6,13 +6,11 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    astal.url = "github:aylur/astal";
+    ags.url = "github:aylur/ags";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    astal = {
-      url = "github:aylur/astal";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lanzaboote = {
