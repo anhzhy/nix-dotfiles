@@ -9,7 +9,7 @@ let
     video = [ "mpv.desktop" ];
     directory = [ "thunar.desktop" ];
     office = [ "onlyoffice.desktop" ];
-    pdf = [ "org.gnome.Evince.desktop" ];
+    pdf = [ "org.pwmt.zathura.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
   };
 
@@ -87,7 +87,6 @@ in
   xdg.mimeApps.defaultApplications = associations;
 
   home.sessionVariables = {
-    TERMINAL = "kitty";
     # prevent wine from creating file associations
     WINEDLLOVERRIDES = "winemenubuilder.exe=d";
   };

@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./nvim
+    ./neovim
     ./vscodium
   ];
 }
