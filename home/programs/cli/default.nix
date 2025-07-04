@@ -1,5 +1,15 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./ags
+    ./bat
+    ./cava
+    ./fastfetch
+    ./matugen
+    ./wallust
+    ./btop
+  ];
+
   home.packages = with pkgs; [
     ani-cli
     aria2

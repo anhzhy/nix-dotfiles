@@ -1,5 +1,14 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./discord
+    ./mpv
+    ./obs-studio
+    ./obsidian
+    ./spotify
+    ./viewnior
+  ];
+
   home.packages = with pkgs; [
     dconf-editor
     # gimp

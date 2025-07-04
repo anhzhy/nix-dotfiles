@@ -5,6 +5,7 @@
     ./hypr
     ./rofi
     ./wlogout
+    ./waybar
     ./hypridle.nix
     ./hyprlock.nix
     ./variables.nix

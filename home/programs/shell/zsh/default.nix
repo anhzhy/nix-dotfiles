@@ -2,6 +2,7 @@
 {
   imports = [
     ./alias.nix
+    ./p10k
   ];
 
   programs.zsh = {

@@ -1,38 +1,8 @@
 { username, ... }:
 {
   imports = [
-    ./p10k/p10k.nix
-    ./git.nix
-    ./btop.nix
-    ./browser.nix
-    ./discord.nix
-    ./obsidian.nix
-    ./games.nix
-    ./bat.nix
-    ./fzf.nix
-    ./swappy.nix
-    ./lazygit.nix
-    ./gtk.nix
-    ./viewnior.nix
-    ./spicetify.nix
-    ./thunar.nix
-    ./obs-studio.nix
-    ./fcitx5.nix
-    ./xdg-mimes.nix
-    ./direnv.nix
-
-    ./ags
-    ./zsh
-    ./fastfetch
-    ./packages
-    ./vscodium
-    ./hyprland
-    ./cava
-    ./wallust
-    ./mpv
-    ./nvim
-    ./waybar
-    ./matugen
+    ./desktop
+    ./programs
   ];
 
   programs.home-manager.enable = true;

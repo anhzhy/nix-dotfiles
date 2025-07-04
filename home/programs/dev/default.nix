@@ -1,11 +1,7 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     # Nix
-    nix-direnv
     nixd
     nixfmt-rfc-style
 
@@ -32,4 +28,11 @@
     # Javascript
     gjs
   ];
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+  };
 }
