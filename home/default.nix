@@ -19,6 +19,7 @@
     ./obs-studio.nix
     ./fcitx5.nix
     ./xdg-mimes.nix
+    ./direnv.nix
 
     ./ags
     ./zsh

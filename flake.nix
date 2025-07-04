@@ -6,6 +6,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nur.url = "github:nix-community/NUR";
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
 
@@ -51,6 +52,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      templates = import ./dev-shells;
       nixosConfigurations = {
         "${hostname}" = nixpkgs.lib.nixosSystem {
           inherit system;

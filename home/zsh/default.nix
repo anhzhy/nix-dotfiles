@@ -9,7 +9,7 @@
     # ohMyZsh = {
     #   enable = true;
     #   plugins = [ "git" "fzf-tab" ];
-    #   theme = "agnoster"; 
+    #   theme = "agnoster";
     # };
 
     autosuggestion.enable = true;
@@ -130,6 +130,9 @@
       setopt hist_verify
 
       source ~/.p10k.zsh
+
+      # Direnv hook
+      eval "$(direnv hook zsh)"
 
       # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
       # - The first argument to the function ($1) is the base path to start traversal
