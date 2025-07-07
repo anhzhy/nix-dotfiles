@@ -58,6 +58,10 @@
           template = "waybar.css";
           target = "~/.config/waybar/style.css";
         };
+        wlogout = {
+          template = "wlogout.css";
+          target = "~/.config/wlogout/style.css";
+        };
       };
     };
   };

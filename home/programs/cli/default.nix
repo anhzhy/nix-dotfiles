@@ -5,7 +5,6 @@
     ./bat
     ./cava
     ./fastfetch
-    ./matugen
     ./wallust
     ./btop
   ];
@@ -62,6 +61,7 @@
     xdg-utils
     xxd
     zathura # pdf reader
+    imagemagick
 
     winetricks
     wineWowPackages.wayland
