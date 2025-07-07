@@ -90,7 +90,6 @@
   '';
 
   xdg.configFile."xfce4/helpers.rc".text = ''
-    [Helper]
     TerminalEmulator=kitty
   '';
 }

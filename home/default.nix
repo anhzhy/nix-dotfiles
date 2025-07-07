@@ -5,7 +5,7 @@
     ./programs
   ];
 
-  programs.home-manager.enable = true;
+  # programs.home-manager.enable = true;
   home.enableNixpkgsReleaseCheck = false;
   home = {
     username = "${username}";

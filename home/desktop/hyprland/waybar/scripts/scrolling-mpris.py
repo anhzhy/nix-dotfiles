@@ -8,9 +8,7 @@ GLYPH_FONT_FAMILY = "Symbols Nerd Font Mono"  # Set to your desired symbols font
 TEXT_WHEN_STOPPED = "Idle"  # Text to display when nothing is playing
 SCROLL_TEXT_LENGTH = 18  # Length of the song title part (excludes glyph and space)
 REFRESH_INTERVAL = 0.5  # How often the script updates (in seconds)
-PLAYERCTL_PATH = (
-    "/usr/bin/playerctl"  # Path to playerctl, use which playerctl to find yours.
-)
+PLAYERCTL_PATH = "playerctl"  # Path to playerctl, use which playerctl to find yours.
 
 
 # Function to get player status using playerctl

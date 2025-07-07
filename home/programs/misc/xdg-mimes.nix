@@ -87,6 +87,7 @@ in
   xdg.mimeApps.defaultApplications = associations;
 
   home.sessionVariables = {
+    TERMINAL = "kitty";
     # prevent wine from creating file associations
     WINEDLLOVERRIDES = "winemenubuilder.exe=d";
   };
