@@ -40,10 +40,14 @@ WORKSPACE="Workspace"
 mkdir -p ~/${DOCUMENTS}
 mkdir -p ~/${DOWNLOADS}
 mkdir -p ~/${MUSIC}
-mkdir -p ~/${PICTURES} && mkdir -p ~/${PICTURES}/wallpapers
+mkdir -p ~/${PICTURES}
 mkdir -p ~/${VIDEOS}
 mkdir -p ~/${WORKSPACE}
 
+mkdir -p ~/${PICTURES}/wallpapers
 cp -r assets/wallpapers/* ~/${PICTURES}/wallpapers
 
+find ~/.config -type f -name '*.backup' -exec rm -f {} +
+
+sudo -u $USERNAME nix-env -iE 'p: {}'
 sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"

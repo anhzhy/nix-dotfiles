@@ -45,6 +45,9 @@ in
         ## Toml
         tamasfe.even-better-toml
 
+        ## Lua
+        sumneko.lua
+
         ## Theme
         jdinhlife.gruvbox
         jonathanharty.gruvbox-material-icon-theme
@@ -65,6 +68,9 @@ in
 
         # Jinja
         pkgs.vscode-marketplace.wholroyd.jinja
+
+        # Lua Formatter
+        pkgs.vscode-marketplace.johnnymorganz.stylua
       ];
   };
 }
