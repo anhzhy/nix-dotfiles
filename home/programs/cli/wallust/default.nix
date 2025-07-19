@@ -42,6 +42,10 @@
           template = "cava";
           target = "~/.config/cava/config";
         };
+        nvim = {
+          template = "nvim.vim";
+          target = "~/.cache/wallust/colors_neopywal.vim";
+        };
         hypr = {
           template = "hypr.conf";
           target = "~/.config/hypr/wallust.conf";

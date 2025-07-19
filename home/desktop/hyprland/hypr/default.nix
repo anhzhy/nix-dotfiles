@@ -31,8 +31,8 @@
       };
 
       render = {
-        explicit_sync = 2;
-        explicit_sync_kms = 2;
+        # explicit_sync = 2;
+        # explicit_sync_kms = 2;
         direct_scanout = 2;
       };
 
