@@ -10,6 +10,7 @@
     noto-fonts-emoji
     fantasque-sans-mono
     maple-mono.truetype-autohint
+    nwg-look
   ];
 
   gtk = {
