@@ -23,7 +23,6 @@
 
     # NodeJS/NestJS
     nodejs
-    nest-cli
 
     # Javascript
     gjs

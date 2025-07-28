@@ -87,5 +87,23 @@
   environment.systemPackages = with pkgs; [
     steam-run
     lutris
+    atk
+    gcc
+    icu
+    nss
+    glib
+    dbus
+    nspr
+    zlib
+    expat
+    glibc
+    systemd
+    openssl
+    libevdev
+    pipewire
+    alsa-lib
+    at-spi2-atk
+    at-spi2-core
+    stdenv.cc.cc
   ];
 }
