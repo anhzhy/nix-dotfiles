@@ -49,5 +49,4 @@ cp -r assets/wallpapers/* ~/${PICTURES}/wallpapers
 
 find ~/.config -type f -name '*.backup' -exec rm -f {} +
 
-sudo -u $USERNAME nix-env -iE 'p: {}'
 sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"

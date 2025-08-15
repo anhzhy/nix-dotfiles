@@ -18,6 +18,9 @@
     gobject-introspection
     llvmPackages_20.clang-tools
 
+    # Java
+    jdk
+
     # Python
     python3Full
 

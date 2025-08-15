@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   system.autoUpgrade = {
     enable = true;
@@ -14,26 +14,12 @@
     # channel = "https://nixos.org/channels/nixos-unstable";
   };
 
-  systemd.user.services.hyprpolkitagent = {
-    description = "Hyprpolkitagent - Polkit authentication agent";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
+  systemd.settings.Manager = {
+    KExecWatchdogSec = "5min";
+    RebootWatchdogSec = "10min";
+    RuntimeWatchdogSec = "30s";
+    WatchdogDevice = "/dev/watchdog";
   };
-
-  systemd.tmpfiles.rules = [
-    "L /bin/bash - - - - /run/current-system/sw/bin/bash"
-  ];
-
-  # To prevent getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

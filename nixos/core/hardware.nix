@@ -25,6 +25,10 @@
         enableGraphical = true;
       };
     };
+
+    openrazer = {
+      enable = true;
+    };
   };
 
   hardware.brillo.enable = true;
@@ -33,5 +37,7 @@
   environment.systemPackages = with pkgs; [
     bluez
     bluez-tools
+    openrazer-daemon
+    polychromatic
   ];
 }

@@ -15,18 +15,11 @@
 
   imports = [
     ./core
+    ./options/amd-drivers.nix
     ./options/intel-drivers.nix
     ./options/nvidia-drivers.nix
     ./options/nvidia-prime-drivers.nix
   ];
-
-  drivers.intel.enable = true;
-  drivers.nvidia.enable = true;
-  drivers.nvidia-prime = {
-    enable = true;
-    intelBusID = "PCI:0:2:0";
-    nvidiaBusID = "PCI:2:0:0";
-  };
 
   environment.systemPackages = with pkgs; [
     # --- Terminal Emulators ---

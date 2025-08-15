@@ -62,27 +62,30 @@
   };
 
   programs.dconf.enable = true;
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    atk
-    gcc
-    icu
-    nss
-    glib
-    dbus
-    nspr
-    zlib
-    expat
-    glibc
-    systemd
-    openssl
-    libevdev
-    pipewire
-    alsa-lib
-    at-spi2-atk
-    at-spi2-core
-    stdenv.cc.cc
-  ];
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      atk
+      gcc
+      icu
+      nss
+      glib
+      dbus
+      nspr
+      zlib
+      expat
+      glibc
+      systemd
+      openssl
+      libevdev
+      pipewire
+      alsa-lib
+      at-spi2-atk
+      at-spi2-core
+      stdenv.cc.cc
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     steam-run

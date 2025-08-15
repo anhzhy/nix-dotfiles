@@ -13,6 +13,7 @@
       "video"
       "audio"
       "pipewire"
+      "openrazer"
     ];
     shell = pkgs.zsh;
   };
