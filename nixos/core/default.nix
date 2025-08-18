@@ -18,5 +18,6 @@
     ./timezone.nix
     ./users.nix
     ./virtualisation.nix
+    ./quickshell.nix
   ];
 }

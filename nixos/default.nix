@@ -15,10 +15,7 @@
 
   imports = [
     ./core
-    ./options/amd-drivers.nix
-    ./options/intel-drivers.nix
-    ./options/nvidia-drivers.nix
-    ./options/nvidia-prime-drivers.nix
+    ./drivers
   ];
 
   environment.systemPackages = with pkgs; [

@@ -10,6 +10,7 @@
   ];
 
   boot = {
+    initrd.verbose = false;
     lanzaboote = {
       enable = true;
       pkiBundle = "/var/lib/sbctl";
@@ -17,6 +18,8 @@
     # kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
+      "quiet"
+      "udev.log_level=3"
       "systemd.mask=systemd-vconsole-setup.service"
       "systemd.mask=dev-tpmrm0.device"
       "nowatchdog"

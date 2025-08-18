@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./ags
     ./bat
     ./cava
     ./fastfetch

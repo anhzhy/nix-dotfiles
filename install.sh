@@ -9,13 +9,16 @@ RESET="$(tput sgr0)"
 
 sed -i 's/username\s*=\s*"\([^"]*\)"/username = "'"$USERNAME"'"/' ./flake.nix 
 
-if [ -r /sys/class/dmi/id/chassis_type ]; then
-  case $(cat /sys/class/dmi/id/chassis_type) in
-    8|9|10|11)  DEVICE="laptop" ;;
-    3|4)        DEVICE="desktop" ;;
-    *)          DEVICE="default" ;;
-  esac
-fi
+echo "Choose your device type:"
+echo "1) Laptop"
+echo "2) Desktop"
+read -p "$ACTION Enter choice [1-2]: " OPTIONS
+
+case $OPTIONS in
+  1) DEVICE="laptop" ;;
+  2) DEVICE="desktop" ;;
+  *) echo "Error: Invalid choice" >&2; exit 1 ;;
+esac
 
 read -rp "$ACTION Enter Your New Hostname: " HOSTNAME
 if [ -z "$HOSTNAME" ]; then
