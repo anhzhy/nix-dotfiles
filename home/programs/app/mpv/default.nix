@@ -8,6 +8,7 @@
   xdg.configFile."mpv/mpv.conf".text = builtins.readFile ./mpv.conf;
 
   home.packages = with pkgs; [
+    mpvpaper
     mpv
   ];
 }

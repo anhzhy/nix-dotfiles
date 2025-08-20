@@ -37,7 +37,7 @@ in
       "${main} SHIFT, G, exec, ${scripts}/GameMode.sh"
       "${main} SHIFT, D, exec, ${scripts}/DarkLight.sh"
       "${main} ALT, R, exec, ${scripts}/Refresh.sh"
-      "${main}, W, exec, ${scripts}/WallpaperSelect.sh"
+      "${main}, W, exec, pgrep -x rofi > /dev/null && pkill rofi || ${scripts}/WallpaperSelect.sh"
       "${main}, T, exec, ${scripts}/TouchPad.sh"
 
       ", PRINT, exec, ${scripts}/ScreenShot.sh --now"

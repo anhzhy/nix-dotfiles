@@ -15,6 +15,7 @@
 
     settings = {
       "source" = "$HOME/.config/hypr/wallust.conf";
+      "$LIVE_WALLPAPER" = "";
       "$TOUCHPAD_DEVICE" = "dell0918:00-0488:121f-touchpad";
       "$TOUCHPAD_ENABLED" = true;
 
