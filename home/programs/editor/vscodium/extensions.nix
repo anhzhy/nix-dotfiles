@@ -27,6 +27,7 @@ in
 
         ## C++
         llvm-vs-code-extensions.vscode-clangd
+        ms-vscode.cmake-tools
         # ms-vscode.cpptools
 
         ## Go
@@ -62,15 +63,27 @@ in
         pkgs.vscode-marketplace.xdebug.php-debug
 
         # Odoo
-        pkgs.vscode-marketplace.dotjoshjohnson.xml
-        pkgs.vscode-marketplace.mechatroner.rainbow-csv
         pkgs.vscode-marketplace.jigar-patel.odoosnippets
+
+        # XML
+        pkgs.vscode-marketplace.redhat.vscode-xml
+        pkgs.vscode-marketplace.dotjoshjohnson.xml
+
+        # CSV
+        pkgs.vscode-marketplace.mechatroner.rainbow-csv
 
         # Jinja
         pkgs.vscode-marketplace.wholroyd.jinja
 
         # Lua Formatter
         pkgs.vscode-marketplace.johnnymorganz.stylua
+
+        # Quickshell
+        pkgs.vscode-marketplace.theqtcompany.qt-core
+        pkgs.vscode-marketplace.theqtcompany.qt-qml
+        pkgs.vscode-marketplace.theqtcompany.qt-cpp
+        pkgs.vscode-marketplace.theqtcompany.qt-ui
+        pkgs.vscode-marketplace.delgan.qml-format
       ];
   };
 }

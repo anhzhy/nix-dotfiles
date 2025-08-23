@@ -60,5 +60,21 @@ in
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
       package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
+
+    boot.kernelParams = lib.optionals (lib.elem "nvidia" config.services.xserver.videoDrivers) [
+      "nvidia-drm.modeset=1"
+      "nvidia_drm.fbdev=1"
+    ];
+
+    environment.sessionVariables = lib.optionalAttrs config.programs.hyprland.enable {
+      NVD_BACKEND = "direct";
+      GBM_BACKEND = "nvidia-drm";
+      WLR_NO_HARDWARE_CURSORS = "1";
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      # MOZ_DISABLE_RDD_SANDBOX = 1; # Potential security risk
+
+      __GL_GSYNC_ALLOWED = "1"; # GSync
+    };
   };
 }

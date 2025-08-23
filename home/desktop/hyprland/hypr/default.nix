@@ -12,6 +12,8 @@
     enable = true;
     # enableNvidiaPatches = true;
     systemd.enable = true;
+    # package = null;
+    # portalPackage = null;
 
     settings = {
       "source" = "$HOME/.config/hypr/wallust.conf";

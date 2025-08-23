@@ -10,8 +10,9 @@
 
   programs.hyprland = {
     enable = true;
-    package = pkgs.hyprland;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
   };
 
@@ -52,13 +53,22 @@
   xdg.portal = {
     enable = true;
     config = {
-      common.default = [ "gtk" ];
-      hyprland.default = [
-        "gtk"
-        "hyprland"
-      ];
+      common = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+      };
+      hyprland = {
+        default = [
+          "gtk"
+          "hyprland"
+        ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
+      };
     };
-    wlr.enable = false;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
   };
 
   programs.dconf.enable = true;
@@ -84,6 +94,7 @@
       at-spi2-atk
       at-spi2-core
       stdenv.cc.cc
+      stdenv.cc.libc
     ];
   };
 
@@ -108,5 +119,6 @@
     at-spi2-atk
     at-spi2-core
     stdenv.cc.cc
+    stdenv.cc.libc
   ];
 }

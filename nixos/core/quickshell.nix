@@ -3,18 +3,19 @@
   environment.systemPackages = with pkgs; [
     inputs.quickshell.packages.${pkgs.system}.default
 
-    # Qt6 related kits（for slove Qt5Compat problem）
-    qt6.qt5compat
     qt6.qtbase
+    qt6.qtsvg
+    qt6.qt5compat
     qt6.qtquick3d
     qt6.qtwayland
+    qt6.qtmultimedia
     qt6.qtdeclarative
-    qt6.qtsvg
+    qt6.qtimageformats
 
-    # alternate options
-    # libsForQt5.qt5compat
-    kdePackages.qt5compat
     libsForQt5.qt5.qtgraphicaleffects
+    kdePackages.qt5compat
+    hyprland-qt-support
+    gsettings-qt
   ];
 
   # necessary environment variables
@@ -25,7 +26,7 @@
 
   # make sure the Qt application is working properly
   environment.sessionVariables = {
-    QT_QPA_PLATFORM = "wayland;xcb";
+    QT_QPA_PLATFORM = "wayland";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     QML_IMPORT_PATH = "${pkgs.hyprland-qt-support}/lib/qt-6/qml";
   };

@@ -11,6 +11,7 @@
     ./nh.nix
     ./nix-settings.nix
     ./programs.nix
+    ./quickshell.nix
     ./security.nix
     ./service.nix
     ./sound.nix
@@ -18,6 +19,5 @@
     ./timezone.nix
     ./users.nix
     ./virtualisation.nix
-    ./quickshell.nix
   ];
 }

@@ -9,5 +9,6 @@
     ./swappy
     ./thunar
     ./xdg-mimes.nix
+    ./qt
   ];
 }

@@ -42,6 +42,10 @@
       "editor.scrollbar.horizontal" = "hidden";
       "workbench.layoutControl.enabled" = false;
       "editor.mouseWheelZoom" = true;
+      "editor.quickSuggestions" = {
+        "strings" = true;
+      };
+      "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
 
       # C/C++
       "clangd.arguments" = [
@@ -58,15 +62,17 @@
 
       # Python
       "python.languageServer" = "Pylance";
-      "python.analysis.typeCheckingMode" = "basic";
+      "python.analysis.typeCheckingMode" = "standard";
+      "python.analysis.extraPaths" = [
+        "\${workspaceFolder}/odoo"
+        "\${workspaceFolder}/odoo/addons"
+        "\${workspaceFolder}/odoo/custom-addons"
+      ];
       "python.testing.pytestEnabled" = true;
       "[python]" = {
         "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "ms-python.black-formatter";
       };
-      "python.formatting.provider" = "black";
-      "python.linting.enabled" = true;
-      "python.linting.pylintEnabled" = true;
 
       # Nix
       "nix.enableLanguageServer" = true;
@@ -80,7 +86,7 @@
       "lua.enableLanguageServer" = true;
       "[lua]" = {
         "editor.formatOnSave" = true;
-        "editor.defaultFormatter" = "sumneko.lua";
+        "editor.defaultFormatter" = "JohnnyMorganz.stylua";
       };
 
       # Node.js / TypeScript / React
@@ -104,11 +110,23 @@
         "/usr/local/include/php"
       ];
 
+      "[xml]" = {
+        "editor.formatOnSave" = true;
+        "editor.defaultFormatter" = "DotJoshJohnson.xml";
+      };
+
       # General
       "files.exclude" = {
         "**/.git" = true;
         "**/.DS_Store" = true;
         "**/node_modules" = true;
+      };
+
+      "files.associations" = {
+        "*.qs" = "qs";
+        "*.xml" = "xml";
+        "*.py" = "python";
+        "*.csv" = "csv";
       };
     };
   };

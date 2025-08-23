@@ -109,7 +109,7 @@ modify_startup_config() {
 
     selected_file="${selected_file/#$HOME/\$HOME}"
 
-    sed -i "s|^\$livewallpaper=.*|\$livewallpaper=\"$selected_file\"|" "$startup_config"
+    sed -i "s|^\$LIVE_WALLPAPER=.*|\$LIVE_WALLPAPER=\"$selected_file\"|" "$startup_config"
 
     echo "Configured for live wallpaper (video)."
   else

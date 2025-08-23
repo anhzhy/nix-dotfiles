@@ -13,10 +13,10 @@
     libgcc
     gnumake
     valgrind
+    clang-tools
     stdenv.cc.cc.lib
     extra-cmake-modules
     gobject-introspection
-    llvmPackages_20.clang-tools
 
     # Java
     jdk
@@ -26,6 +26,8 @@
 
     # NodeJS/NestJS
     nodejs
+    typescript
+    typescript-language-server
 
     # Javascript
     gjs

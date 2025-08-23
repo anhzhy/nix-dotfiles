@@ -81,7 +81,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wireplumber
     acpi
     brightnessctl
     cpupower-gui
