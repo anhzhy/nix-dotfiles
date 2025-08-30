@@ -22,7 +22,7 @@
     jdk
 
     # Python
-    python3Full
+    python3
 
     # NodeJS/NestJS
     nodejs

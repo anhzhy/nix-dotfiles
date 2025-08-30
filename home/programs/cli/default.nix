@@ -61,6 +61,7 @@
     xxd
     zathura # pdf reader
     imagemagick
+    xclip
 
     winetricks
     wineWowPackages.wayland

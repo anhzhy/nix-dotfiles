@@ -46,6 +46,12 @@
         "strings" = true;
       };
       "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
+      "qt-core.additionalQtPaths" = [
+        {
+          "name" = "Qt-6.9.1-linux-g++_from_PATH";
+          "path" = "/run/current-system/sw/bin/qtpaths";
+        }
+      ];
 
       # C/C++
       "clangd.arguments" = [

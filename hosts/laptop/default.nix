@@ -34,39 +34,35 @@
     };
 
     thermald.enable = true;
-    tlp.enable = false;
-    # tlp.settings = {
-    #   CPU_ENERGY_PERF_POLICY_ON_AC = "power";
-    #   CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+    tlp.enable = true;
+    tlp.settings = {
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
-    #   CPU_BOOST_ON_AC = 1;
-    #   CPU_BOOST_ON_BAT = 1;
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-    #   CPU_HWP_DYN_BOOST_ON_AC = 1;
-    #   CPU_HWP_DYN_BOOST_ON_BAT = 1;
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 1;
 
-    #   PLATFORM_PROFILE_ON_AC = "performance";
-    #   PLATFORM_PROFILE_ON_BAT = "performance";
+      CPU_HWP_DYN_BOOST_ON_AC = 1;
+      CPU_HWP_DYN_BOOST_ON_BAT = 1;
 
-    #   INTEL_GPU_MIN_FREQ_ON_AC = 500;
-    #   INTEL_GPU_MIN_FREQ_ON_BAT = 500;
-    #   # INTEL_GPU_MAX_FREQ_ON_AC=0;
-    #   # INTEL_GPU_MAX_FREQ_ON_BAT=0;
-    #   # INTEL_GPU_BOOST_FREQ_ON_AC=0;
-    #   # INTEL_GPU_BOOST_FREQ_ON_BAT=0;
+      PLATFORM_PROFILE_ON_AC = "performance";
+      PLATFORM_PROFILE_ON_BAT = "balanced";
 
-    #   # PCIE_ASPM_ON_AC = "default";
-    #   # PCIE_ASPM_ON_BAT = "powersupersave";
-    # };
+      START_CHARGE_THRESH_BAT0 = 50;
+      STOP_CHARGE_THRESH_BAT0 = 80;
+    };
   };
 
   powerManagement = {
-    enable = false;
-    # cpuFreqGovernor = "schedutil";
+    enable = true;
+    cpuFreqGovernor = "schedutil";
   };
 
   programs.auto-cpufreq = {
-    enable = true;
+    enable = false; # Turning this off for now until new update
 
     settings = {
       charger = {
@@ -87,10 +83,9 @@
     powertop
   ];
 
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+  services.logind.settings.Login = {
+    powerKey = "ignore";
+  };
 
   boot = {
     kernelModules = [ "acpi_call" ];

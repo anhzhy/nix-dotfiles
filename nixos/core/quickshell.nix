@@ -11,6 +11,7 @@
     qt6.qtmultimedia
     qt6.qtdeclarative
     qt6.qtimageformats
+    qt6.qtpositioning
 
     libsForQt5.qt5.qtgraphicaleffects
     kdePackages.qt5compat

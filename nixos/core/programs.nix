@@ -86,6 +86,7 @@
       zlib
       expat
       glibc
+      brotli
       systemd
       openssl
       libevdev
@@ -111,6 +112,7 @@
     zlib
     expat
     glibc
+    brotli
     systemd
     openssl
     libevdev
