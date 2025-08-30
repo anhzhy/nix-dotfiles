@@ -1,4 +1,9 @@
+-- Source: https://github.com/dexeonify/mpv-config/blob/main/scripts/seek-to.lua
+-- with modifications
+
 local assdraw = require 'mp.assdraw'
+local utils = require 'mp.utils'
+local msg = require 'mp.msg'
 local active = false
 local cursor_position = 1
 local time_scale = {60*60*10, 60*60, 60*10, 60, 10, 1, 0.1, 0.01, 0.001}
@@ -12,6 +17,9 @@ for i = 1, 9 do
 end
 local history_position = 1
 
+-- timer to redraw periodically the message
+-- to avoid leaving bindings when the seeker disappears for whatever reason
+-- pretty hacky tbh
 local timer = nil
 local timer_duration = 3
 
@@ -39,6 +47,7 @@ function copy_history_to_last()
 end
 
 function change_number(i)
+    -- can't set above 60 minutes or seconds
     if (cursor_position == 3 or cursor_position == 5) and i >= 6 then
         return
     end
@@ -77,6 +86,7 @@ end
 function seek_to()
     copy_history_to_last()
     mp.commandv("osd-bar", "seek", current_time_as_sec(history[history_position]), "absolute")
+    --deduplicate consecutive timestamps
     if #history == 1 or not time_equal(history[history_position], history[#history - 1]) then
         history[#history + 1] = {}
         history_position = #history
@@ -87,13 +97,11 @@ function seek_to()
 end
 
 function backspace()
-    if cursor_position ~= 9 or current_time[9] == 0 then
-        shift_cursor(true)
-    end
     if history[history_position][cursor_position] ~= 0 then
         copy_history_to_last()
         history[#history][cursor_position] = 0
     end
+    shift_cursor(true)
 end
 
 function history_move(up)
@@ -121,6 +129,7 @@ end
 
 function set_active()
     if not mp.get_property("seekable") then return end
+    -- find duration of the video and set cursor position accordingly
     local duration = mp.get_property_number("duration")
     if duration ~= nil then
         for i = 1, 9 do
@@ -147,4 +156,37 @@ function set_inactive()
     active = false
 end
 
+function paste_timestamp()
+    -- get clipboard data
+    local clipboard = utils.subprocess({
+        args = { "powershell", "-Command", "Get-Clipboard", "-Raw" },
+        playback_only = false,
+        capture_stdout = true,
+        capture_stderr = true
+    })
+
+    -- error handling
+    if not clipboard.error then
+        timestamp = clipboard.stdout
+    else
+        msg.error("Error getting data from clipboard:")
+        msg.error("  stderr: " .. clipboard.stderr)
+        msg.error("  stdout: " .. clipboard.stdout)
+        return
+    end
+
+    -- find timestamp from clipboard
+    match = timestamp:match("%d?%d?:?%d%d:%d%d%.?%d*")
+
+    -- paste and seek to timestamp
+    if match ~= nil then
+        mp.osd_message("Timestamp pasted: " .. match)
+        mp.commandv("osd-bar", "seek", match, "absolute")
+    else
+        msg.warn("No pastable timestamp found!")
+    end
+end
+
+-- keybindings are set in input.conf
 mp.add_key_binding(nil, "toggle-seeker", function() if active then set_inactive() else set_active() end end)
+mp.add_key_binding(nil, "paste-timestamp", paste_timestamp)
