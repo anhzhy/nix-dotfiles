@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get keyboard brightness
 get_kbd_backlight() {

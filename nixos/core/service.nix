@@ -37,7 +37,7 @@
     udev.enable = true;
 
     # Filesystem for environment variables
-    # envfs.enable = true;
+    envfs.enable = true;
 
     # Discard unused blocks on SSDs, improving performance and longevity
     fstrim = {

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export STATUS_FILE="$XDG_RUNTIME_DIR/touchpad.status"
 

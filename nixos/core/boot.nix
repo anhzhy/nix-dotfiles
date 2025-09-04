@@ -1,21 +1,10 @@
 {
   pkgs,
-  lib,
-  inputs,
   ...
 }:
 {
-  imports = [
-    inputs.lanzaboote.nixosModules.lanzaboote
-  ];
-
   boot = {
     initrd.verbose = false;
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/var/lib/sbctl";
-    };
-    # kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "quiet"
@@ -34,10 +23,14 @@
       "usbhid"
       "sd_mod"
     ];
-    loader.systemd-boot.enable = lib.mkForce false;
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+    };
     initrd.systemd.enable = true;
     plymouth.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [ sbctl ];
 }

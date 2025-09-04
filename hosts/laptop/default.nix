@@ -34,40 +34,40 @@
     };
 
     thermald.enable = true;
-    tlp.enable = true;
-    tlp.settings = {
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+    tlp.enable = false;
+    # tlp.settings = {
+    #   CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+    #   CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    #   CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    #   CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 1;
+    #   CPU_BOOST_ON_AC = 1;
+    #   CPU_BOOST_ON_BAT = 1;
 
-      CPU_HWP_DYN_BOOST_ON_AC = 1;
-      CPU_HWP_DYN_BOOST_ON_BAT = 1;
+    #   CPU_HWP_DYN_BOOST_ON_AC = 1;
+    #   CPU_HWP_DYN_BOOST_ON_BAT = 1;
 
-      PLATFORM_PROFILE_ON_AC = "performance";
-      PLATFORM_PROFILE_ON_BAT = "balanced";
+    #   PLATFORM_PROFILE_ON_AC = "performance";
+    #   PLATFORM_PROFILE_ON_BAT = "balanced";
 
-      START_CHARGE_THRESH_BAT0 = 50;
-      STOP_CHARGE_THRESH_BAT0 = 80;
-    };
+    #   START_CHARGE_THRESH_BAT0 = 50;
+    #   STOP_CHARGE_THRESH_BAT0 = 80;
+    # };
   };
 
   powerManagement = {
-    enable = true;
-    cpuFreqGovernor = "schedutil";
+    enable = false;
+    # cpuFreqGovernor = "schedutil";
   };
 
   programs.auto-cpufreq = {
-    enable = false; # Turning this off for now until new update
+    enable = true;
 
     settings = {
       charger = {
-        governor = "schedutil"; # can be "schedutil", "ondemand", etc.
-        turbo = "never"; # can be "always", "auto", "never"
+        governor = "schedutil";
+        turbo = "never";
       };
       battery = {
         governor = "powersave";

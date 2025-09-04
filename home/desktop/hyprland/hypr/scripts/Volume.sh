@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 sDIR="$HOME/.config/hypr/scripts"
 

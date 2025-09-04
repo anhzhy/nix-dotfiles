@@ -8,12 +8,12 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nur.url = "github:nix-community/NUR";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
+    hjem = {
+      url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
+    home-manager = {
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix = {
@@ -64,8 +64,8 @@
               ;
           };
           modules = [
-            ./hosts/${hostname}/default.nix
             home-manager.nixosModules.home-manager
+            ./hosts/${hostname}
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
