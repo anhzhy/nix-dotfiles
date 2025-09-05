@@ -5,7 +5,8 @@
     "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
     "systemctl --user restart xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland"
 
-    # "fcitx5 &"
+    "pkill fcitx5 &"
+    "systemctl --user restart fcitx5-daemon"
 
     "swww-daemon --format xrgb"
     ''mpvpaper '*' -o "load-scripts=no no-audio --loop" $LIVE_WALLPAPER''

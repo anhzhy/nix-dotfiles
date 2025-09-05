@@ -6,12 +6,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nur.url = "github:nix-community/NUR";
 
-    hjem = {
-      url = "github:feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,11 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
-      url = "github:maximoffua/zen-browser.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     quickshell = {
@@ -38,51 +29,68 @@
     {
       self,
       nixpkgs,
-      home-manager,
       ...
     }@inputs:
     let
+      inherit (self) outputs;
       username = "huyna";
       hostname = "nixos";
-      device = "laptop";
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
+      terminal = "kitty";
+      file-manager = "thunar";
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forAllSystems = nixpkgs.lib.genAttrs systems;
+      # pkgs = forAllSystems (system: import nixpkgs { inherit system; });
     in
     {
       templates = import ./dev-shells;
+      overlays = import ./overlays { inherit inputs; };
       nixosConfigurations = {
-        "${hostname}" = nixpkgs.lib.nixosSystem {
-          inherit system;
+        laptop = nixpkgs.lib.nixosSystem {
+          system = forAllSystems (system: system);
           specialArgs = {
+            device = "laptop";
             inherit
               self
               inputs
-              hostname
+              outputs
               username
-              device
+              hostname
+              terminal
+              file-manager
               ;
           };
-          modules = [
-            home-manager.nixosModules.home-manager
-            ./hosts/${hostname}
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./home/default.nix;
-              home-manager.extraSpecialArgs = {
-                inherit
-                  self
-                  inputs
-                  hostname
-                  username
-                  device
-                  ;
-              };
-            }
-          ];
+          modules = [ ./hosts/laptop ];
+        };
+        desktop = nixpkgs.lib.nixosSystem {
+          system = forAllSystems (system: system);
+          specialArgs = {
+            device = "desktop";
+            inherit
+              self
+              inputs
+              outputs
+              username
+              hostname
+              terminal
+              file-manager
+              ;
+          };
+          modules = [ ./hosts/desktop ];
         };
       };
+
+      # homeConfigurations.default = {
+      #   home-manager.lib.homeManagerConfiguration = {
+      #     pkgs = pkgs;
+      #     modules = [ ./home ];
+      #     extraSpecialArgs = {
+      #       inherit self inputs outputs;
+      #     }
+      #     // settings;
+      #   };
+      # };
     };
 }

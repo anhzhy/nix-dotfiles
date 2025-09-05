@@ -9,7 +9,6 @@
         fcitx5-unikey
         fcitx5-gtk
         fcitx5-configtool
-        fcitx5-catppuccin
       ];
 
       settings = {
@@ -29,9 +28,10 @@
   };
 
   home.sessionVariables = {
-    # GTK_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
+    SDL_IM_MODULE = "fcitx";
   };
 
   i18n.inputMethod.fcitx5.waylandFrontend = true;

@@ -1,4 +1,4 @@
-{ ... }:
+{ device, ... }:
 {
   programs.zsh = {
     shellAliases = {
@@ -13,11 +13,13 @@
       lt = "eza --icons --tree --group-directories-first";
 
       # Nixos
-      nix-switch = "nh os switch";
-      nix-update = "nh os switch --update";
+      home-switch = "nh home switch";
+      home-update = "nh home switch --update";
+      nix-switch = "nh os switch --hostname ${device}";
+      nix-update = "nh os switch --hostname ${device} --update";
       nix-clean = "nh clean all --keep 3";
       nix-search = "nh search";
-      nix-test = "nh os test";
+      nix-test = "nh os test --hostname ${device}";
 
       # Git
       g = "lazygit";

@@ -116,9 +116,16 @@
         "/usr/local/include/php"
       ];
 
+      # XML
       "[xml]" = {
         "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "DotJoshJohnson.xml";
+      };
+
+      # QML
+      "[qml]" = {
+        "editor.formatOnSave" = true;
+        "editor.defaultFormatter" = "Delgan.qml-format";
       };
 
       # General

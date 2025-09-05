@@ -1,8 +1,6 @@
-{ ... }:
+{ terminal, file-manager, ... }:
 let
   main = "SUPER";
-  terminal = "kitty";
-  files = "thunar";
   scripts = "$HOME/.config/hypr/scripts";
 in
 {
@@ -19,7 +17,7 @@ in
       # Common
       "${main}, Return, exec, ${terminal}"
       "${main} SHIFT, Return, exec, [float; move 15% 5%; size 70% 60%] ${terminal}"
-      "${main}, E, exec, ${files}"
+      "${main}, E, exec, ${file-manager}"
       "${main}, B, exec, xdg-open 'https://'"
       "${main}, D, exec, pgrep -x rofi > /dev/null && pkill rofi || rofi -show drun -modi drun,filebrowser,run,window"
 

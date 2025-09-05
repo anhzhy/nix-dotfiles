@@ -7,12 +7,6 @@
 
   programs.zsh = {
     enable = true;
-    # ohMyZsh = {
-    #   enable = true;
-    #   plugins = [ "git" "fzf-tab" ];
-    #   theme = "agnoster";
-    # };
-
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
@@ -33,6 +27,14 @@
       # zmodload zsh/zle
       # zmodload zsh/zpty
       # zmodload zsh/complist
+
+      # List dir shortcut
+      ls_all_shortcut() {
+        BUFFER="ls -a"
+        zle accept-line
+      }
+      zle -N ls_all_shortcut
+      bindkey "^[l" ls_all_shortcut
 
       # Initialize colors
       autoload -Uz colors

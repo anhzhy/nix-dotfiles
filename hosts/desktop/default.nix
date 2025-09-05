@@ -3,8 +3,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../nixos/default.nix
-    ../../overlays
+    ../../nixos
+    ../../home
   ];
 
   drivers.amdgpu.enable = false;

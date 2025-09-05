@@ -28,11 +28,20 @@
     };
   };
 
+  systemd.timers.kbd_raw_timer.timerConfig.AccuracySec = "1s";
+  systemd.services.kbd_raw_timer = {
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig.Type = "oneshot";
+    # every 5 seconds
+    startAt = "*:*:00/5";
+    # set keyboard mode to raw, as a "solution" to gnome using alt and super keys to switch between the 7 ttys
+    script = "${pkgs.kbd}/bin/kbd_mode -s";
+  };
+
   systemd.settings.Manager = {
-    KExecWatchdogSec = "5min";
-    RebootWatchdogSec = "10min";
-    RuntimeWatchdogSec = "30s";
-    WatchdogDevice = "/dev/watchdog";
+    RebootWatchdogSec = "1min";
+    RuntimeWatchdogSec = "0";
+    DefaultTimeoutStopSec = "20s";
   };
 
   # This value determines the NixOS release from which the default
