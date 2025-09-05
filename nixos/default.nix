@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }:
 
@@ -7,7 +8,15 @@
   nixpkgs.config = {
     allowBroken = true;
     allowUnfree = true;
-    allowUnfreePredicate = (_: true);
+    allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "cudatoolkit"
+        "nvidia-persistenced"
+        "nvidia-settings"
+        "nvidia-x11"
+      ];
+    cudaSupport = true;
     permittedInsecurePackages = [
       "electron-25.9.0"
     ];
@@ -21,9 +30,6 @@
   environment.systemPackages = with pkgs; [
     # --- Terminal Emulators ---
     kitty
-
-    # --- Web Browsers ---
-    firefox
 
     # --- Text Editors ---
     vim

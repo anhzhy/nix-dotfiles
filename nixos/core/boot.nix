@@ -29,7 +29,9 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
       };
+      timeout = null;
     };
+    tmp.cleanOnBoot = true;
     initrd.systemd.enable = true;
     plymouth.enable = true;
   };

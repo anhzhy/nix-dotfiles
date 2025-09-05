@@ -28,8 +28,12 @@ if [ -f "$cache_file" ]; then
         ln_success=true  # Set the flag to true upon successful execution
     fi
 
+    if [ ! -d "$HOME/.config/hypr/wallpaper_effects" ]; then
+        mkdir -p "$HOME/.config/hypr/wallpaper_effects"
+    fi
+
     # copy the wallpaper for wallpaper effects
-	cp -r "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
+    ln -sf "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
 fi
 
 # Check the flag before executing further commands

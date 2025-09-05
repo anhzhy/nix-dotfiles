@@ -20,10 +20,9 @@
     };
 
     logitech = {
-      wireless = {
-        enable = true;
-        enableGraphical = true;
-      };
+      # enable = true;
+      wireless.enable = true;
+      wireless.enableGraphical = true;
     };
 
     openrazer = {

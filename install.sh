@@ -50,6 +50,6 @@ mkdir -p ~/${WORKSPACE}
 mkdir -p ~/${PICTURES}/wallpapers
 cp -r assets/wallpapers/* ~/${PICTURES}/wallpapers
 
-find ~/.config -type f -name '*.backup' -exec rm -f {} +
+find ~/.config -type f -name '*.hm-backup' -exec rm -f {} +
 
 sudo nixos-rebuild switch --flake $SOURCE/#"${HOSTNAME}"

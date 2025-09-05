@@ -10,7 +10,7 @@
       "tag +browser, class:^([Mm]icrosoft-edge(-stable|-beta|-dev|-unstable))$"
       "tag +browser, class:^(Brave-browser(-beta|-dev|-unstable)?)$"
       "tag +browser, class:^([Tt]horium-browser|[Cc]achy-browser)$"
-      "tag +browser, class:^(zen-alpha|zen)$"
+      "tag +browser, class:^(zen-beta|zen)$"
 
       # --- Email ---
       "tag +email, class:^([Tt]hunderbird|org.gnome.Evolution)$"

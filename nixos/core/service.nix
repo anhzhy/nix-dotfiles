@@ -11,7 +11,7 @@
     gnome-keyring
     openssh
     udev
-    # envfs
+    envfs
     util-linux
     libinput
     rpcbind

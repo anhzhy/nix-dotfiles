@@ -28,7 +28,7 @@
     # zenity
     dbeaver-bin
     qbittorrent
-    thunderbird
+    # thunderbird
     teams-for-linux
   ];
 }

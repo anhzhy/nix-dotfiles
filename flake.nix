@@ -8,10 +8,6 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nur.url = "github:nix-community/NUR";
 
-    hjem = {
-      url = "github:feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,11 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
-      url = "github:maximoffua/zen-browser.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     quickshell = {
@@ -38,7 +30,6 @@
     {
       self,
       nixpkgs,
-      home-manager,
       ...
     }@inputs:
     let
@@ -46,8 +37,6 @@
       hostname = "nixos";
       device = "laptop";
       system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       templates = import ./dev-shells;
@@ -63,25 +52,7 @@
               device
               ;
           };
-          modules = [
-            home-manager.nixosModules.home-manager
-            ./hosts/${hostname}
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./home/default.nix;
-              home-manager.extraSpecialArgs = {
-                inherit
-                  self
-                  inputs
-                  hostname
-                  username
-                  device
-                  ;
-              };
-            }
-          ];
+          modules = [ ./hosts/${hostname} ];
         };
       };
     };
