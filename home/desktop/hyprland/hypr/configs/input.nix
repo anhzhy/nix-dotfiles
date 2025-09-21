@@ -6,6 +6,8 @@
     left_handed = false;
     follow_mouse = true;
     float_switch_override_focus = false;
+    accel_profile = "flat";
+    force_no_accel = true;
 
     touchpad = {
       disable_while_typing = true;

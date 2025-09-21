@@ -12,8 +12,7 @@ in
 {
   programs.vscode.profiles.default = {
     extensions =
-      with pkgs.vscode-extensions;
-      [
+      (with pkgs.vscode-extensions; [
         ## Nix
         jnoortheen.nix-ide
         arrterian.nix-env-selector
@@ -56,41 +55,46 @@ in
         ## Theme
         jdinhlife.gruvbox
         jonathanharty.gruvbox-material-icon-theme
-      ]
-      ++ [
+      ])
+      ++ (with pkgs.vscode-marketplace; [
+        mnismt.overwrite
+
         ## Node + React
-        # pkgs.vscode-marketplace.msjsdiag.debugger-for-chrome # deprecated
+        # msjsdiag.debugger-for-chrome # deprecated
 
         ## PHP + Laravel
-        pkgs.vscode-marketplace.onecentlin.laravel-blade
-        pkgs.vscode-marketplace.bmewburn.vscode-intelephense-client
-        pkgs.vscode-marketplace.xdebug.php-debug
+        onecentlin.laravel-blade
+        bmewburn.vscode-intelephense-client
+        xdebug.php-debug
 
         # Odoo
-        pkgs.vscode-marketplace.jigar-patel.odoosnippets
+        jigar-patel.odoosnippets
 
         # XML
-        pkgs.vscode-marketplace.redhat.vscode-xml
-        pkgs.vscode-marketplace.dotjoshjohnson.xml
+        redhat.vscode-xml
+        dotjoshjohnson.xml
 
         # CSV
-        pkgs.vscode-marketplace.mechatroner.rainbow-csv
+        mechatroner.rainbow-csv
 
         # Jinja
-        pkgs.vscode-marketplace.wholroyd.jinja
+        wholroyd.jinja
 
         # Lua Formatter
-        pkgs.vscode-marketplace.johnnymorganz.stylua
+        johnnymorganz.stylua
+
+        # Vue syntax highlight
+        znck.vue
 
         # Vue syntax highlight
         pkgs.vscode-marketplace.znck.vue
 
         # Quickshell
-        pkgs.vscode-marketplace.theqtcompany.qt-core
-        pkgs.vscode-marketplace.theqtcompany.qt-qml
-        pkgs.vscode-marketplace.theqtcompany.qt-cpp
-        pkgs.vscode-marketplace.theqtcompany.qt-ui
-        pkgs.vscode-marketplace.delgan.qml-format
-      ];
+        theqtcompany.qt-core
+        theqtcompany.qt-qml
+        theqtcompany.qt-cpp
+        theqtcompany.qt-ui
+        delgan.qml-format
+      ]);
   };
 }

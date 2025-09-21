@@ -29,68 +29,63 @@
     {
       self,
       nixpkgs,
+      home-manager,
       ...
     }@inputs:
     let
       inherit (self) outputs;
-      username = "huyna";
-      hostname = "nixos";
-      terminal = "kitty";
-      file-manager = "thunar";
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
-      # pkgs = forAllSystems (system: import nixpkgs { inherit system; });
+
+      settings = {
+        device = "laptop";
+        username = "huyna";
+        hostname = "nixos";
+        terminal = "kitty";
+        file-manager = "thunar";
+      };
+
+      lib = nixpkgs.lib // home-manager.lib;
+      system = "x86_64-linux";
+      overlays = builtins.attrValues (import ./overlays { inherit inputs outputs; });
+      config = {
+        allowBroken = true;
+        allowUnfree = true;
+      };
     in
     {
       templates = import ./dev-shells;
-      overlays = import ./overlays { inherit inputs; };
+      overlays = overlays;
+      config = config;
+
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          system = forAllSystems (system: system);
-          specialArgs = {
-            device = "laptop";
-            inherit
-              self
-              inputs
-              outputs
-              username
-              hostname
-              terminal
-              file-manager
-              ;
-          };
+        laptop = lib.nixosSystem {
+          system = system;
           modules = [ ./hosts/laptop ];
-        };
-        desktop = nixpkgs.lib.nixosSystem {
-          system = forAllSystems (system: system);
           specialArgs = {
-            device = "desktop";
-            inherit
-              self
-              inputs
-              outputs
-              username
-              hostname
-              terminal
-              file-manager
-              ;
-          };
+            inherit self inputs outputs;
+          }
+          // settings;
+        };
+        desktop = lib.nixosSystem {
+          system = system;
           modules = [ ./hosts/desktop ];
+          specialArgs = {
+            inherit self inputs outputs;
+          }
+          // settings;
         };
       };
 
-      # homeConfigurations.default = {
-      #   home-manager.lib.homeManagerConfiguration = {
-      #     pkgs = pkgs;
-      #     modules = [ ./home ];
-      #     extraSpecialArgs = {
-      #       inherit self inputs outputs;
-      #     }
-      #     // settings;
-      #   };
-      # };
+      homeConfigurations.${settings.username} = lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = overlays;
+          config = config;
+        };
+        modules = [ ./home ];
+        extraSpecialArgs = {
+          inherit self inputs outputs;
+        }
+        // settings;
+      };
     };
 }

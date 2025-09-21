@@ -7,7 +7,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../nixos
-    ../../home
   ];
 
   drivers.amdgpu.enable = false;

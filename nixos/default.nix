@@ -1,32 +1,13 @@
 {
   pkgs,
-  lib,
   outputs,
-  inputs,
   ...
 }:
 
 {
   nixpkgs = {
-    overlays = builtins.attrValues outputs.overlays ++ [
-      inputs.nix-vscode-extensions.overlays.default
-    ];
-    config = {
-      allowBroken = true;
-      allowUnfree = true;
-      allowUnfreePredicate =
-        pkg:
-        builtins.elem (lib.getName pkg) [
-          "cudatoolkit"
-          "nvidia-persistenced"
-          "nvidia-settings"
-          "nvidia-x11"
-        ];
-      cudaSupport = true;
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
-    };
+    overlays = outputs.overlays;
+    config = outputs.config;
   };
 
   imports = [
@@ -37,6 +18,9 @@
   environment.systemPackages = with pkgs; [
     # --- Terminal Emulators ---
     kitty
+
+    # --- Browsers ---
+    firefox
 
     # --- Text Editors ---
     vim

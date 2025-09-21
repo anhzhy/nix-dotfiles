@@ -6,8 +6,8 @@
   home.packages = (
     with pkgs;
     [
-      rofi-wayland
-      rofi-emoji-wayland
+      rofi
+      rofi-emoji
       rofi-games
     ]
   );
