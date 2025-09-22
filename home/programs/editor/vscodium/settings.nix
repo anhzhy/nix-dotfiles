@@ -95,6 +95,15 @@
         "editor.defaultFormatter" = "JohnnyMorganz.stylua";
       };
 
+      # Vue
+      "vue.enableLanguageServer" = true;
+      "[vue]" = {
+        "editor.formatOnSave" = true;
+      };
+      "vetur.validation.template" = true;
+      "vetur.validation.script" = true;
+      "vetur.validation.style" = true;
+
       # Node.js / TypeScript / React
       "eslint.enable" = true;
       "eslint.run" = "onType";

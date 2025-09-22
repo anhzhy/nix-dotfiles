@@ -49,6 +49,10 @@ in
         ## Lua
         sumneko.lua
 
+        ## Vue
+        vue.volar
+        octref.vetur
+
         ## Theme
         jdinhlife.gruvbox
         jonathanharty.gruvbox-material-icon-theme
@@ -77,6 +81,9 @@ in
 
         # Lua Formatter
         pkgs.vscode-marketplace.johnnymorganz.stylua
+
+        # Vue syntax highlight
+        pkgs.vscode-marketplace.znck.vue
 
         # Quickshell
         pkgs.vscode-marketplace.theqtcompany.qt-core
