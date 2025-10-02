@@ -38,20 +38,14 @@
       "workbench.statusBar.visible" = false;
       "editor.scrollbar.verticalScrollbarSize" = 2;
       "editor.scrollbar.horizontalScrollbarSize" = 2;
-      "editor.scrollbar.vertical" = "hidden";
-      "editor.scrollbar.horizontal" = "hidden";
+      "editor.scrollbar.vertical" = "visible";
+      "editor.scrollbar.horizontal" = "visible";
       "workbench.layoutControl.enabled" = false;
       "editor.mouseWheelZoom" = true;
       "editor.quickSuggestions" = {
         "strings" = true;
       };
       "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
-      "qt-core.additionalQtPaths" = [
-        {
-          "name" = "Qt-6.9.1-linux-g++_from_PATH";
-          "path" = "/run/current-system/sw/bin/qtpaths";
-        }
-      ];
 
       # C/C++
       "clangd.arguments" = [
@@ -136,6 +130,14 @@
         "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "Delgan.qml-format";
       };
+      "qt-qml.doNotAskForQmllsDownload" = true;
+      "qt-core.additionalQtPaths" = [
+        {
+          "name" = "QtPaths";
+          "path" = "/run/current-system/sw/bin/qtpaths";
+        }
+      ];
+      "qt-qml.qmlls.customExePath" = "/run/current-system/sw/bin/qmlls";
 
       # General
       "files.exclude" = {
