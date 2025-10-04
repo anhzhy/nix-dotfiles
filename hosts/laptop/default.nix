@@ -9,15 +9,6 @@
     ../../nixos
   ];
 
-  drivers.amdgpu.enable = false;
-  drivers.intel.enable = true;
-  drivers.nvidia.enable = true;
-  drivers.nvidia-prime = {
-    enable = true;
-    intelBusID = "PCI:0:2:0";
-    nvidiaBusID = "PCI:2:0:0";
-  };
-
   services = {
     power-profiles-daemon.enable = false;
 

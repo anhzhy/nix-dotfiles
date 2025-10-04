@@ -1,9 +1,9 @@
-{ ... }:
+{ desktop, ... }:
 {
   services.xserver.displayManager = {
     lightdm = {
       enable = true;
     };
   };
-  services.displayManager.defaultSession = "hyprland";
+  services.displayManager.defaultSession = desktop;
 }
