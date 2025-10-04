@@ -3,10 +3,10 @@
   programs.git = {
     enable = true;
 
-    userName = "anhzhy";
-    userEmail = "anzi.nguyen.vn@gmail.com";
+    settings = {
+      user.name = "anhzhy";
+      user.email = "anzi.nguyen.vn@gmail.com";
 
-    extraConfig = {
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
@@ -14,16 +14,17 @@
       color.ui = true;
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
     };
+  };
 
-    delta = {
-      enable = true;
-      options = {
-        line-numbers = true;
-        side-by-side = false;
-        diff-so-fancy = true;
-        navigate = true;
-      };
+  programs.delta = {
+    enable = true;
+    options = {
+      line-numbers = true;
+      side-by-side = false;
+      diff-so-fancy = true;
+      navigate = true;
     };
+    enableGitIntegration = true;
   };
 
   home.packages = with pkgs; [ gh ]; # pkgs.git-lfs
