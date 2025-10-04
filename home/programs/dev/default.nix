@@ -24,6 +24,9 @@
     # Python
     python3
 
+    # Golang
+    go
+
     # NodeJS/NestJS
     nodejs
     typescript

@@ -8,14 +8,6 @@
     inputs.nix-gaming.nixosModules.platformOptimizations
   ];
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    xwayland.enable = true;
-  };
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
@@ -60,6 +52,12 @@
         default = [
           "gtk"
           "hyprland"
+        ];
+      };
+      kde = {
+        default = [
+          "gtk"
+          "kde"
         ];
       };
     };

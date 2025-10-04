@@ -17,7 +17,7 @@
       home-update = "nh home switch --update";
       nix-switch = "nh os switch --hostname ${device}";
       nix-update = "nh os switch --hostname ${device} --update";
-      nix-clean = "nh clean all --keep 2";
+      nix-clean = "nh clean all --keep 3";
       nix-search = "nh search";
       nix-test = "nh os test --hostname ${device}";
 

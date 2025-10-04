@@ -12,6 +12,7 @@
 
   imports = [
     ./core
+    ./desktops
     ./drivers
   ];
 

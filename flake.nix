@@ -36,7 +36,10 @@
       inherit (self) outputs;
 
       settings = {
-        device = "laptop";
+        device = "laptop"; # desktop | laptop
+        locale = "ja_JP.UTF-8";
+        graphic = "hybrid"; # hybrid | nvidia | intel | amd
+        desktop = "hyprland"; # hyprland | plasma
         username = "huyna";
         hostname = "nixos";
         terminal = "kitty";
