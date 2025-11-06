@@ -5,7 +5,7 @@
     ./display-manager.nix
     ./fonts.nix
     ./hardware.nix
-    ./keyboard-layout.nix
+    ./kbd.nix
     ./locale.nix
     ./networking.nix
     ./nh.nix
