@@ -34,6 +34,10 @@
 
     # Javascript
     gjs
+
+    # Mobile
+    android-tools
+    android-studio-tools
   ];
 
   programs.direnv = {
