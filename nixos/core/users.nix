@@ -18,6 +18,7 @@
       "audio"
       "pipewire"
       "openrazer"
+      "adbusers"
     ];
     shell = pkgs.zsh;
   };
