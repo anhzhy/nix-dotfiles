@@ -9,6 +9,7 @@
     ./locale.nix
     ./networking.nix
     ./nh.nix
+    ./nix-ld.nix
     ./nix-settings.nix
     ./programs.nix
     ./quickshell.nix

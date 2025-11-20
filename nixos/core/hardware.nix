@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    bluez
+    bluez-tools
+    openrazer-daemon
+    polychromatic
+  ];
+
   services.blueman.enable = true;
   hardware = {
     bluetooth = {
@@ -28,15 +35,8 @@
     openrazer = {
       enable = true;
     };
+
+    brillo.enable = true;
+    enableRedistributableFirmware = true;
   };
-
-  hardware.brillo.enable = true;
-  hardware.enableRedistributableFirmware = true;
-
-  environment.systemPackages = with pkgs; [
-    bluez
-    bluez-tools
-    openrazer-daemon
-    polychromatic
-  ];
 }

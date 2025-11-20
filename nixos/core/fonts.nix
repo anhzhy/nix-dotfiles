@@ -2,21 +2,22 @@
 {
   fonts = {
     packages = with pkgs; [
-      # icon fonts
       material-symbols
 
-      # Sans(Serif) fonts
+      dejavu_fonts
       libertinus
+
+      fira-code
+      fira-code-symbols
+
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       roboto
       (google-fonts.override { fonts = [ "Inter" ]; })
 
-      # monospace fonts
       jetbrains-mono
 
-      # nerdfonts
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
     ];

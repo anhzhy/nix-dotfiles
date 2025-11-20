@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     # Nix
     nixd
-    nixfmt-rfc-style
+    nixfmt
 
     # C / C++
     gcc

@@ -1,5 +1,10 @@
 { pkgs, hostname, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet
+    iw
+  ];
+
   networking = {
     hostName = "${hostname}";
     # wireless.enable = true;
@@ -10,6 +15,7 @@
       "8.8.8.8"
       "8.8.4.4"
       "1.1.1.1"
+      "1.1.0.0"
     ];
     firewall = {
       enable = true;
@@ -27,9 +33,4 @@
       ];
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    networkmanagerapplet
-    iw
-  ];
 }

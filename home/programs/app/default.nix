@@ -1,10 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
-    ./discord
     ./mpv
     ./obs-studio
-    ./obsidian
     ./spotify
     ./viewnior
   ];
@@ -31,5 +29,7 @@
     # thunderbird
     caprine
     teams-for-linux
+    vesktop
+    obsidian
   ];
 }

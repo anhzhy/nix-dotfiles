@@ -82,22 +82,18 @@
       };
 
       # Lua
-      "lua.enableLanguageServer" = true;
       "[lua]" = {
         "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "JohnnyMorganz.stylua";
       };
 
       # Vue
-      # "vue.enableLanguageServer" = true;
       "[vue]" = {
         "editor.formatOnSave" = true;
       };
-      "vetur.validation.template" = true;
-      "vetur.validation.script" = true;
-      "vetur.validation.style" = true;
+      "typescript.tsdk" = "node_modules/typescript/lib";
 
-      # Node.js / TypeScript / React
+      # Node.js / TypeScript / React / Vue
       "eslint.enable" = true;
       "eslint.run" = "onType";
       "eslint.validate" = [
@@ -105,6 +101,7 @@
         "javascriptreact"
         "typescript"
         "typescriptreact"
+        "vue"
       ];
       "prettier.requireConfig" = true;
       "typescript.tsserver.experimental.enableProjectDiagnostics" = true;

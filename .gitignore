@@ -1,7 +1,3 @@
-.vscode/
-.vscode-oss/
-*.code-workspace
-
 *.log
 *.swp
 *.tmp

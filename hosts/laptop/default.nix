@@ -9,8 +9,20 @@
     ../../nixos
   ];
 
+  environment.systemPackages = with pkgs; [
+    acpi
+    brightnessctl
+    cpupower-gui
+    powertop
+  ];
+
   services = {
     power-profiles-daemon.enable = false;
+    cpupower-gui.enable = true;
+
+    logind.settings.Login = {
+      powerKey = "ignore";
+    };
 
     upower = {
       enable = true;
@@ -43,17 +55,6 @@
     cpuFreqGovernor = "schedutil";
   };
 
-  environment.systemPackages = with pkgs; [
-    acpi
-    brightnessctl
-    cpupower-gui
-    powertop
-  ];
-
-  services.logind.settings.Login = {
-    powerKey = "ignore";
-  };
-
   boot = {
     kernelModules = [ "acpi_call" ];
     extraModulePackages =
@@ -64,6 +65,4 @@
       ]
       ++ [ pkgs.cpupower-gui ];
   };
-
-  services.cpupower-gui.enable = true;
 }

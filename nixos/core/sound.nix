@@ -9,6 +9,11 @@
     inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
 
+  environment.systemPackages = with pkgs; [
+    pamixer
+    pavucontrol
+  ];
+
   services.pulseaudio.enable = lib.mkForce false;
   services.pipewire = {
     enable = true;
@@ -21,8 +26,4 @@
   };
 
   hardware.alsa.enablePersistence = true;
-  environment.systemPackages = with pkgs; [
-    pamixer
-    pavucontrol
-  ];
 }

@@ -50,7 +50,6 @@ in
 
         ## Vue
         vue.volar
-        octref.vetur
 
         ## Theme
         jdinhlife.gruvbox
@@ -82,12 +81,6 @@ in
 
         # Lua Formatter
         johnnymorganz.stylua
-
-        # Vue syntax highlight
-        znck.vue
-
-        # Vue syntax highlight
-        pkgs.vscode-marketplace.znck.vue
 
         # Quickshell
         theqtcompany.qt-core

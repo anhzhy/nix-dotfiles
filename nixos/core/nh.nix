@@ -1,5 +1,10 @@
 { pkgs, username, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    nix-output-monitor
+    nvd
+  ];
+
   programs.nh = {
     enable = true;
     clean = {
@@ -8,9 +13,4 @@
     };
     flake = "/home/${username}/nix-dotfiles";
   };
-
-  environment.systemPackages = with pkgs; [
-    nix-output-monitor
-    nvd
-  ];
 }

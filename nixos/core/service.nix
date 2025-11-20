@@ -4,67 +4,20 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
-    postgresql_15
-    gvfs
-    xfce.tumbler
-    gnome-keyring
-    openssh
-    udev
-    envfs
-    util-linux
-    libinput
-    rpcbind
-    nfs-utils
-    fwupd
-    dbus
-  ];
-
   services = {
-    # Mount, trash, and other functionalities
     gvfs.enable = true;
-
-    # Thumbnail support for images
     tumbler.enable = true;
-
-    # Managing passwords, keys, and secrets securely
     gnome.gnome-keyring.enable = true;
-
-    # Allow remote SSH access to the machine
     openssh.enable = true;
-
-    # Handling device events and hotplugging
     udev.enable = true;
-
-    # Filesystem for environment variables
     envfs.enable = true;
-
-    # Discard unused blocks on SSDs, improving performance and longevity
-    fstrim = {
-      enable = true;
-      interval = "weekly";
-    };
-
-    # Input device management
+    fstrim.enable = true;
     libinput.enable = true;
-
-    # RPC program numbers to network addresses
     rpcbind.enable = false;
-
-    # Sharing files over the network
     nfs.server.enable = false;
-
-    # Firmware updates on supported hardware devices
     fwupd.enable = true;
-
-    dbus = {
-      enable = true;
-      packages = with pkgs; [
-        gcr
-        gnome-settings-daemon
-        dconf
-      ];
-    };
+    flatpak.enable = false;
+    dbus.enable = true;
 
     postgresql = {
       enable = true;
