@@ -13,7 +13,6 @@
       "workbench.colorTheme" = "Gruvbox Dark Hard";
       "workbench.iconTheme" = "gruvbox-material-icon-theme";
       "material-icon-theme.folders.theme" = "classic";
-      "vsicons.dontShowNewVersionMessage" = true;
       "explorer.confirmDragAndDrop" = false;
       "editor.fontLigatures" = true;
       "editor.minimap.enabled" = false;
@@ -56,7 +55,7 @@
       # Rust
       "rust-analyzer.server.path" = "rust-analyzer";
       "rust-analyzer.check.command" = "clippy";
-      "rust-analyzer.cargo.loadOutDirsFromCheck" = true;
+      # "rust-analyzer.cargo.loadOutDirsFromCheck" = true;
       "rust-analyzer.procMacro.enable" = true;
       "rust-analyzer.diagnostics.disabled" = [ "unresolved-proc-macro" ];
 
@@ -90,7 +89,7 @@
       };
 
       # Vue
-      "vue.enableLanguageServer" = true;
+      # "vue.enableLanguageServer" = true;
       "[vue]" = {
         "editor.formatOnSave" = true;
       };

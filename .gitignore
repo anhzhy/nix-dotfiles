@@ -1,30 +1,8 @@
-# Build
-result
-result-*
-*.drv
-
-# Store
-/nix/store/
-
-# Direnv
-.direnv/
-.cache/
-.devenv/
-devenv.local/
-
-# VSCode / VSCodium
 .vscode/
 .vscode-oss/
 *.code-workspace
 
-# Logs
 *.log
-
-# Temporary files
 *.swp
 *.tmp
-*~
-
-# OS cruft
-.DS_Store
-Thumbs.db
+*.service

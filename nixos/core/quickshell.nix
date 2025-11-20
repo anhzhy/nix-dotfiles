@@ -15,8 +15,6 @@
 
     libsForQt5.qt5.qtgraphicaleffects
     kdePackages.qt5compat
-    hyprland-qt-support
-    gsettings-qt
   ];
 
   # necessary environment variables
