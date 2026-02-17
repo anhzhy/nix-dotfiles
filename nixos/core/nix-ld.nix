@@ -20,19 +20,19 @@
       systemd
 
       # My own additions
-      xorg.libXcomposite
-      xorg.libXtst
-      xorg.libXrandr
-      xorg.libXext
-      xorg.libX11
-      xorg.libXfixes
+      libxcomposite
+      libxslt
+      libxrandr
+      libxext
+      libx11
+      libxfixes
       libGL
       libva
       pipewire
-      xorg.libxcb
-      xorg.libXdamage
-      xorg.libxshmfence
-      xorg.libXxf86vm
+      libxcb
+      libxdamage
+      libxshmfence
+      libxxf86vm
       libelf
 
       # Required
@@ -51,13 +51,13 @@
       zenity
 
       # # Without these it silently fails
-      xorg.libXinerama
-      xorg.libXcursor
-      xorg.libXrender
-      xorg.libXScrnSaver
-      xorg.libXi
-      xorg.libSM
-      xorg.libICE
+      libxinerama
+      libxcursor
+      libxrender
+      libxscrnsaver
+      libxi
+      libsm
+      libice
       gnome2.GConf
       nspr
       nss
@@ -95,7 +95,7 @@
       libgcrypt
       libvpx
       librsvg
-      xorg.libXft
+      libxft
       libvdpau
       # ...
       # Some more libraries that I needed to run programs

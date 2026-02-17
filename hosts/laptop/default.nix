@@ -56,7 +56,10 @@
   };
 
   boot = {
-    kernelModules = [ "acpi_call" ];
+    kernelModules = [
+      "acpi_call"
+      "coretemp"
+    ];
     extraModulePackages =
       with config.boot.kernelPackages;
       [

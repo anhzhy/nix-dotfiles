@@ -13,8 +13,8 @@
     nvidia.enable = graphic == "nvidia" || graphic == "hybrid";
     nvidia-prime = lib.mkIf (graphic == "hybrid") {
       enable = true;
-      intelBusID = "PCI:0:2:0";
-      nvidiaBusID = "PCI:2:0:0";
+      intelBusID = "PCI:0@0:2:0";
+      nvidiaBusID = "PCI:2@0:0:0";
     };
   };
 }

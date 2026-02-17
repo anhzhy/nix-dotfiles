@@ -62,7 +62,7 @@
     xclip
 
     winetricks
-    wineWowPackages.wayland
+    wineWow64Packages.wayland
 
     asciiquarium # fish pool
     cbonsai # bonsai
