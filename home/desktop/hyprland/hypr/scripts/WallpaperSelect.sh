@@ -129,12 +129,12 @@ apply_image_wallpaper() {
 
   if ! pgrep -x "swww-daemon" >/dev/null; then
     echo "Starting swww-daemon..."
-    swww-daemon --format xrgb &
+    swww-daemon --format argb &
   fi
 
   swww img -o "$focused_monitor" "$image_path" $SWWW_PARAMS
 
-  "$WALLPAPER_SCRIPTS/WallustSwww.sh"
+  "$WALLPAPER_SCRIPTS/WallustSwww.sh" "$image_path"
   sleep 2
 
   "$WALLPAPER_SCRIPTS/Refresh.sh"

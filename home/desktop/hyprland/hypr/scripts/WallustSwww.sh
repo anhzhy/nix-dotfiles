@@ -20,20 +20,19 @@ echo $cache_file
 # Check if the cache file exists for the current monitor output
 if [ -f "$cache_file" ]; then
     # Get the wallpaper path from the cache file
-    wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
+    if [[ -n "$1" ]]; then
+        wallpaper_path="$1"
+    else
+        wallpaper_path=$(cat "$cache_file" | tr -d '[:space:]')
+    fi
     echo $wallpaper_path
 
+    mkdir -p "$HOME/.config/hypr/wallpaper_effects"
+
     # symlink the wallpaper to the location Rofi can access
-    if ln -sf "$wallpaper_path" "$HOME/.config/rofi/.current_wallpaper"; then
+    if ln -sf "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.current_wallpaper"; then
         ln_success=true  # Set the flag to true upon successful execution
     fi
-
-    if [ ! -d "$HOME/.config/hypr/wallpaper_effects" ]; then
-        mkdir -p "$HOME/.config/hypr/wallpaper_effects"
-    fi
-
-    # copy the wallpaper for wallpaper effects
-    ln -sf "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
 fi
 
 # Check the flag before executing further commands

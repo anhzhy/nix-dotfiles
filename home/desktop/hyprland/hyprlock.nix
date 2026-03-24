@@ -16,7 +16,7 @@
       background = [
         {
           monitor = "";
-          path = "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current";
+          path = "$HOME/.config/hypr/wallpaper_effects/.current_wallpaper";
           blur_passes = 2;
           contrast = 0.8916;
           brightness = 0.8172;

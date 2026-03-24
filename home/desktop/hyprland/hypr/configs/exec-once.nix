@@ -8,11 +8,12 @@
     "pkill fcitx5 &"
     "systemctl --user restart fcitx5-daemon"
 
-    "swww-daemon --format xrgb"
+    "swww-daemon --format argb"
     ''mpvpaper '*' -o "load-scripts=no no-audio --loop" $LIVE_WALLPAPER''
 
     "waybar &"
     "nm-applet --indicator &"
+    "steam -nochatui -nofriendsui -silent &"
 
     "wl-paste --type text --watch cliphist store"
     "wl-paste --type image --watch cliphist store"

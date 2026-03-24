@@ -18,9 +18,6 @@
     extra-cmake-modules
     gobject-introspection
 
-    # Java
-    jdk
-
     # Python
     python3
 
@@ -45,5 +42,10 @@
     nix-direnv.enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
+  };
+
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk;
   };
 }
