@@ -3,6 +3,10 @@
   fonts = {
     packages = with pkgs; [
       material-symbols
+      font-awesome
+      terminus_font
+      hackgen-font
+      symbola
 
       dejavu_fonts
       libertinus
