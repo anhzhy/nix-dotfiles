@@ -5,7 +5,7 @@
       "update.mode" = "none";
       "extensions.autoUpdate" = false; # This stuff fixes vscode freaking out when theres an update
       "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
-
+      "chat.editor.fontFamily" = "Maple Mono, SymbolsNerdFont, monospace";
       "window.menuBarVisibility" = "toggle";
       "editor.fontFamily" = "Maple Mono, SymbolsNerdFont, monospace";
       "terminal.integrated.fontFamily" = "Maple Mono, SymbolsNerdFont";
@@ -91,7 +91,7 @@
       "[vue]" = {
         "editor.formatOnSave" = true;
       };
-      "typescript.tsdk" = "node_modules/typescript/lib";
+      "js/ts.tsdk.path" = "node_modules/typescript/lib";
 
       # Node.js / TypeScript / React / Vue
       "eslint.enable" = true;
@@ -104,7 +104,7 @@
         "vue"
       ];
       "prettier.requireConfig" = true;
-      "typescript.tsserver.experimental.enableProjectDiagnostics" = true;
+      "js/ts.tsserver.experimental.enableProjectDiagnostics" = true;
 
       # PHP
       "php.validate.enable" = true;

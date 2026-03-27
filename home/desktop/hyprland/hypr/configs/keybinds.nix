@@ -71,7 +71,7 @@ in
       "${main} CTRL, Return, layoutmsg, swapwithmaster"
 
       # Dwindle
-      "${main} SHIFT, I, togglesplit"
+      "${main} SHIFT, I, layoutmsg, togglesplit"
       "${main}, P, pseudo,"
 
       # Works on either (Master or Dwindle)

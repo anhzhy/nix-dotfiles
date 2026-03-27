@@ -51,6 +51,9 @@ in
         ## Vue
         vue.volar
 
+        # AI
+        anthropic.claude-code
+
         ## Theme
         jdinhlife.gruvbox
         jonathanharty.gruvbox-material-icon-theme

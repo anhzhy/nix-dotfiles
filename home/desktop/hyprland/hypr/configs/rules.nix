@@ -35,7 +35,7 @@
 
       # --- Games ---
       "match:class ^(gamescope)$, tag +games"
-      "match:class ^(steam_app_\\d+)$, tag +games"
+      "match:class ^(steam_app_.*)$, tag +games"
 
       # --- Game Store ---
       "match:class ^([Ss]team)$, tag +gamestore"

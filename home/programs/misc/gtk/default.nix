@@ -48,6 +48,8 @@
     size = 24;
   };
 
+  gtk.gtk4.theme = null;
+
   home.sessionVariables = {
     GTK_THEME = "Colloid-Green-Dark-Gruvbox";
   };
