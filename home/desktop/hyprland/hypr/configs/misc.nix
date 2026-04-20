@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland.settings.misc = {
     disable_hyprland_logo = true;
     disable_splash_rendering = true;
-    vfr = true;
+    # vfr = true;
     vrr = 2;
     mouse_move_enables_dpms = true;
     enable_swallow = true;

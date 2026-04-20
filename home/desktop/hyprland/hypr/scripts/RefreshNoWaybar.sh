@@ -23,6 +23,6 @@ done
 #ags -q && ags &
 
 # Wallust refresh
-${SCRIPTSDIR}/WallustSwww.sh &
+${SCRIPTSDIR}/WallustAwww.sh &
 
 exit 0

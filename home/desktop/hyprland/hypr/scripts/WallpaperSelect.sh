@@ -10,12 +10,12 @@ IMAGE_CACHE="$HOME/.cache/wallpapers/image"
 VIDEO_CACHE="$HOME/.cache/wallpapers/video"
 GIF_CACHE="$HOME/.cache/wallpapers/gif"
 
-# SWWW CONFIG
+# AWWW CONFIG
 FPS=60
 TYPE="any"
 DURATION=2
 BEZIER=".43,1.19,1,.4"
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION --transition-bezier $BEZIER"
+AWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION --transition-bezier $BEZIER"
 
 # ROFI CONFIG
 ROFI_CONFIG="$HOME/.config/rofi/config-wallpaper.rasi"
@@ -40,7 +40,7 @@ monitor_height=$(hyprctl monitors -j | jq -r --arg mon "$focused_monitor" '.[] |
 
 # Kill existing wallpaper daemons for video
 kill_wallpaper_for_video() {
-  swww kill 2>/dev/null
+  awww kill 2>/dev/null
   pkill mpvpaper 2>/dev/null
   pkill swaybg 2>/dev/null
   pkill hyprpaper 2>/dev/null
@@ -104,7 +104,7 @@ modify_startup_config() {
 
   if [[ "$selected_file" =~ \.(mp4|mkv|mov|webm|MP4|MKV|MOV|WEBM)$ ]]; then
     # For video wallpaper
-    sed -i '/^\s*exec-once\s*=\s*swww-daemon\s*--format\s*xrgb\s*$/s/^/#/' "$startup_config"
+    sed -i '/^\s*exec-once\s*=\s*awww-daemon\s*--format\s*xrgb\s*$/s/^/#/' "$startup_config"
     sed -i '/^\s*#\s*exec-once\s*=\s*mpvpaper\s*.*$/s/^#\s*//' "$startup_config"
 
     selected_file="${selected_file/#$HOME/\$HOME}"
@@ -114,7 +114,7 @@ modify_startup_config() {
     echo "Configured for live wallpaper (video)."
   else
     # For image wallpaper
-    sed -i '/^\s*#\s*exec-once\s*=\s*swww-daemon\s*--format\s*xrgb\s*$/s/^\s*#\s*//' "$startup_config"
+    sed -i '/^\s*#\s*exec-once\s*=\s*awww-daemon\s*--format\s*xrgb\s*$/s/^\s*#\s*//' "$startup_config"
     sed -i '/^\s*exec-once\s*=\s*mpvpaper\s*.*$/s/^/#/' "$startup_config"
 
     echo "Configured for static wallpaper (image)."
@@ -127,14 +127,14 @@ apply_image_wallpaper() {
 
   kill_wallpaper_for_image
 
-  if ! pgrep -x "swww-daemon" >/dev/null; then
-    echo "Starting swww-daemon..."
-    swww-daemon --format argb &
+  if ! pgrep -x "awww-daemon" >/dev/null; then
+    echo "Starting awww-daemon..."
+    awww-daemon --format argb &
   fi
 
-  swww img -o "$focused_monitor" "$image_path" $SWWW_PARAMS
+  awww img -o "$focused_monitor" "$image_path" $AWWW_PARAMS
 
-  "$WALLPAPER_SCRIPTS/WallustSwww.sh" "$image_path"
+  "$WALLPAPER_SCRIPTS/WallustAwww.sh" "$image_path"
   sleep 2
 
   "$WALLPAPER_SCRIPTS/Refresh.sh"

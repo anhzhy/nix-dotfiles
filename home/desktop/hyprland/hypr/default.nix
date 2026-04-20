@@ -60,7 +60,7 @@
   };
 
   home.packages = with pkgs; [
-    swww
+    awww
     grim
     hypr
     slurp

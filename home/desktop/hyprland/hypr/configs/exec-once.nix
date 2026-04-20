@@ -8,7 +8,7 @@
     "pkill fcitx5 &"
     "systemctl --user restart fcitx5-daemon"
 
-    "swww-daemon --format argb"
+    "awww-daemon --format argb"
     ''mpvpaper '*' -o "load-scripts=no no-audio --loop" $LIVE_WALLPAPER''
 
     "waybar &"
